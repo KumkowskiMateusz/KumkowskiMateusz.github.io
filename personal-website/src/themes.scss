@@ -1,0 +1,34 @@
+// themes.scss
+
+// Light mode theme
+$light-mode-background: #ffffff;
+$light-mode-text: #000000;
+$light-mode-primary: #007bff;
+$light-mode-secondary: #6c757d;
+
+// Dark mode theme
+$dark-mode-background: #343a40;
+$dark-mode-text: #ffffff;
+$dark-mode-primary: #17a2b8;
+$dark-mode-secondary: #6c757d;
+
+@mixin color-scheme($bg, $text, $primary, $secondary) {
+    background-color: $bg;
+    color: $text;
+
+    .primary {
+        color: $primary;
+    }
+
+    .secondary {
+        color: $secondary;
+    }
+}
+
+.light-mode {
+    @include color-scheme($light-mode-background, $light-mode-text, $light-mode-primary, $light-mode-secondary);
+}
+
+.dark-mode {
+    @include color-scheme($dark-mode-background, $dark-mode-text, $dark-mode-primary, $dark-mode-secondary);
+}

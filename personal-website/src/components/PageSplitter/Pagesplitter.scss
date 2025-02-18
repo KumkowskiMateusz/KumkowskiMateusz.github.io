@@ -1,0 +1,14 @@
+.page-splitter {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.left-segment {
+    padding: 20px;
+}
+
+.right-segment {
+    padding: 20px;
+}
