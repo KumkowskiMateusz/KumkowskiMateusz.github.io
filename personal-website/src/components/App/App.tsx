@@ -1,17 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from '../../assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './App.scss'
 import Pagesplitter from '../PageSplitter/Pagesplitter'
 import BubbleContainer from '../BubbleContainer/BubbleContainer'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
+
+
+
+
     <>
         <Pagesplitter 
-        leftSegment={<BubbleContainer color='red' size={"50px"} content={<img src={reactLogo} alt='react logo' />} />}
+        leftSegment={<BubbleContainer content={<img src={reactLogo} alt='react logo' />} />}
         rightSegment={<div><h2>Mateusz Kumkowski</h2><h3>Java Full-Stack Developer</h3></div>} 
         />
 
