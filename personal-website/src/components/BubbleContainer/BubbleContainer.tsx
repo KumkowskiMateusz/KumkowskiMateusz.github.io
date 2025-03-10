@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import './BubbleContainer.scss'
 
 interface BubbleContainerProps {
-    content: ReactNode
+    content?: ReactNode
     color ?: string,
     size ?: string,
     border ?: string
@@ -11,6 +11,7 @@ interface BubbleContainerProps {
 const BubbleContainer = (props : BubbleContainerProps) => {
 
   const [content, setContent] = React.useState(props.content)
+  if (content === undefined) setContent('')
 
   const [color, setColor] = React.useState(props.color)
   if (color === undefined) setColor('white')
