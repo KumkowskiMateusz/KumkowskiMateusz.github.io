@@ -1,32 +1,74 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './BubbleBackground.scss';
-import useMousePosition from '../../customHooks/useMousePosition';
+import SupplementaryClass from '../SupplementaryClass/SupplementaryClass';
+import BlurComponent from '../BlurComponent/BlurComponent';
+
 
 const BubbleBackground: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
-    const mousePosition = useMousePosition();
+    const [innerBubbleColor,setInnerBubbleColor] = useState<string>('rgba(201, 0, 117, 0.1)');
+    const [outerBubbleColor,setOuterBubbleColor] = useState<string>('rgba(206, 64, 64, 0.7)');
+    const [MinBubbleSize,setMinBubbleSize] = useState<number>(50);
+    const [MaxBubbleSize,setMaxBubbleSize] = useState<number>(100);
+    const [MaxOpacity,setMaxOpacity] = useState<number>(0.8);
+    const [MinOpacity,setMinOpacity] = useState<number>(0.1);
+    const [bubbleCreationInterval,setBubbleCreationInterval] = useState<number>(100);
+    const [MaxBubbleSpeed,setMaxBubbleSpeed] = useState<number>(4);
+    const [MinBubbleSpeed,setMinBubbleSpeed] = useState<number>(1);
+    const [blur,setBlur] = useState<boolean>(true);
 
 
-    const createBubble = () => {
-        console.log('createBubble');
-        const randomSize: number = Math.floor(Math.random() * 20) + 10;
-        const randomSpeed : number = Math.ceil(Math.random() * 4) + 2;
+
+
+
+    
+
+    const createBubble = async () => {
+        let randomSize: number = Math.floor(Math.random() * (MaxBubbleSize - MinBubbleSize)) + MinBubbleSize;
+        const randomSpeed : number = Math.ceil(Math.random() * (MaxBubbleSpeed - MinBubbleSpeed)) + MinBubbleSpeed;
         const randomLeft : number = Math.floor(Math.random() * 100);
-        const randomColor : string = 'radial-gradient(circle at 50% 50%, transparent 50%, #'+(Math.random()*0xFFFFFF<<0).toString(16)+' 90%)';
-        const bubble = document.createElement('div');
+        const randomOpacity : number = Math.random() * (MaxOpacity - MinOpacity) + MinOpacity;  
+        const randomColors : number[] = randomBubbleColor();
+        const randomColor: string = `radial-gradient(circle at 60% 35%, rgba(${randomColors[0]}, ${randomColors[1]}, ${randomColors[2]}, ${MinOpacity}) 30%, rgba(${randomColors[0]}, ${randomColors[1]}, ${randomColors[2]}, ${randomOpacity}) 70%)` ;
+        const bubble : HTMLDivElement = document.createElement('div');
+        let bubblePosition : number = window.innerHeight;
+
         bubble.classList.add('bubble');
         bubble.style.width = `${randomSize}px`;
         bubble.style.height = `${randomSize}px`;
+        bubble.style.position = 'fixed';
+        bubble.style.zIndex = '-1';
         bubble.style.left = `${randomLeft}%`;
+        bubble.style.top = `${window.innerHeight}px`;
         bubble.style.borderRadius = '50%';
         bubble.style.background = randomColor;
-        containerRef.current?.appendChild(bubble);
+        await containerRef.current?.appendChild(bubble);
+
+        const id : number = setInterval(moveBubbles, 10);
         setTimeout(() => {
             containerRef.current?.removeChild(bubble);
-        }, randomSpeed * 1000);
+        }, 10000);
+
+        function randomBubbleColor() : number[]{
+            const innerRange : number[] = SupplementaryClass.rgbaToList(innerBubbleColor);
+            const outerRange : number[] = SupplementaryClass.rgbaToList(outerBubbleColor);
+            let redRange: number = Math.floor(Math.random() * (outerRange[0] - innerRange[0])) + innerRange[0];
+            let greenRange: number = Math.floor(Math.random() * (outerRange[1] - innerRange[1])) + innerRange[1];
+            let blueRange: number = Math.floor(Math.random() * (outerRange[2] - innerRange[2])) + innerRange[2];
+            return [redRange,greenRange,blueRange];
+        }
+    
+
+        function moveBubbles() {
+            if(bubblePosition < -(MaxBubbleSize)){
+                clearInterval(id);
+            }
+            bubblePosition -= randomSpeed;
+            bubble.style.top = `${bubblePosition}px`;
+        }        
     }
 
-    useEffect(() => {setInterval(() => {createBubble();}, 100);},[]);
+    useEffect(() => {setInterval(() => {createBubble();}, bubbleCreationInterval);},[]);
 
     return <>
         <div className='bubbles-container' ref={containerRef}>

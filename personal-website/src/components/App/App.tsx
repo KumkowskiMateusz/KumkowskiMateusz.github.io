@@ -5,15 +5,16 @@ import './App.scss'
 import Pagesplitter from '../PageSplitter/Pagesplitter'
 import BubbleContainer from '../BubbleContainer/BubbleContainer'
 import BubbleBackground from '../BubbleBackground/BubbleBackground'
+import BlurComponent from '../BlurComponent/BlurComponent'
 
 function App() {
-
   return (
 
 
 
     <>
       <BubbleBackground/>
+
       <main>
 
           <Pagesplitter 

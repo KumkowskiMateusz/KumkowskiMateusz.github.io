@@ -1,7 +1,9 @@
 
 main {
   margin-inline: auto;
-  max-width: clamp(300px, 80%, 1000px);
+  background:  rgba(136, 136, 136, 0);
+  padding: 2rem;
+  max-width: clamp(300px, 80%, 1500px);
 }
   
 h1{
