@@ -8,20 +8,13 @@ const BubbleBackground: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [innerBubbleColor,setInnerBubbleColor] = useState<string>('rgba(201, 0, 117, 0.1)');
     const [outerBubbleColor,setOuterBubbleColor] = useState<string>('rgba(206, 64, 64, 0.7)');
-    const [MinBubbleSize,setMinBubbleSize] = useState<number>(50);
+    const [MinBubbleSize,setMinBubbleSize] = useState<number>(20);
     const [MaxBubbleSize,setMaxBubbleSize] = useState<number>(100);
     const [MaxOpacity,setMaxOpacity] = useState<number>(0.8);
     const [MinOpacity,setMinOpacity] = useState<number>(0.1);
     const [bubbleCreationInterval,setBubbleCreationInterval] = useState<number>(100);
     const [MaxBubbleSpeed,setMaxBubbleSpeed] = useState<number>(4);
     const [MinBubbleSpeed,setMinBubbleSpeed] = useState<number>(1);
-    const [blur,setBlur] = useState<boolean>(true);
-
-
-
-
-
-    
 
     const createBubble = async () => {
         let randomSize: number = Math.floor(Math.random() * (MaxBubbleSize - MinBubbleSize)) + MinBubbleSize;
