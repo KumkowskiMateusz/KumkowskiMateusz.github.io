@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react'
-import reactLogo from '../../assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.scss'
 import Pagesplitter from '../PageSplitter/Pagesplitter'
 import BubbleBackground from '../bubbleBackground/BubbleBackground'
@@ -8,8 +6,6 @@ import Flower from '../../assets/Gorgosaurus_BW_transparent.png'
 import IntroCard from '../IntroCard/IntroCard'
 
 function App() {
-  let a = {margin: 'auto', backdropFilter: 'blur(10px)'}
-
   return (
     <>
       <BubbleBackground/>

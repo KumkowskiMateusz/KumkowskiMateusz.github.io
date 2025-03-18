@@ -5,7 +5,7 @@ interface OutsetContainerProps {
     color ?: string
 }
 
-const OutsetContainer = (props : OutsetContainerProps) => {
+const OutsetContainer = (_props : OutsetContainerProps) => {
   return (
     <div>OutsetContainer</div>
   )
