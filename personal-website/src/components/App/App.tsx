@@ -1,4 +1,3 @@
-
 import './App.scss'
 import Pagesplitter from '../PageSplitter/Pagesplitter'
 import BubbleBackground from '../bubbleBackground/BubbleBackground'
