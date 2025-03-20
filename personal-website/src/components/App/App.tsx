@@ -3,11 +3,41 @@ import Pagesplitter from '../PageSplitter/Pagesplitter'
 import BubbleBackground from '../bubbleBackground/BubbleBackground'
 import Flower from '../../assets/Gorgosaurus_BW_transparent.png'
 import IntroCard from '../IntroCard/IntroCard'
+import { useState } from 'react'
 
 function App() {
+  const [colorPickers, setColorPickers] = useState<Record<string, string>>({
+    color1: '#000000',
+    color2: '#000000',
+    color3: '#000000',
+  });
+  
+  const [booleanSwitches, setBooleanSwitches] = useState<Record<string, boolean>>({
+    switch1: false,
+    switch2: false,
+    switch3: false,
+  });
+  
+  const [numberInputs, setNumberInputs] = useState<Record<string, number>>({
+    input1: 0,
+    input2: 0,
+    input3: 0,
+    input4: 0,
+    input5: 0,
+    input6: 0,
+    input7: 0,
+    input8: 0,
+    input9: 0,
+  });
+
   return (
     <>
-      <BubbleBackground/>
+      <BubbleBackground innerBubbleColor={colorPickers.color2} outerBubbleColor={colorPickers.color3} 
+                        MinBubbleSize={numberInputs.input1} MaxBubbleSize={numberInputs.input2} 
+                        MinOpacity={numberInputs.input3} MaxOpacity={numberInputs.input4}
+                        MinBubbleSpeed={numberInputs.input5} MaxBubbleSpeed={numberInputs.input6}
+                        bubbleCreationInterval={numberInputs.input7}
+                        />
       <main>
 
           <Pagesplitter 
@@ -28,9 +58,9 @@ function App() {
           <p>Interactive graph Segmenting between languages/libraries/frameworks/tools that shows years worked with tools</p>
 
         <h1>Contact Information</h1>
-        <p>email</p>
-        <p>linkedin</p>
-        <p>github</p>
+        <p>email: mateuszkumkowski2002@gmail.com</p>
+        <p>linkedin: https://www.linkedin.com/in/kumkowskimateusz/</p>
+        <p>github: https://github.com/KumkowskiMateusz</p>
       </main>
     </>
   )

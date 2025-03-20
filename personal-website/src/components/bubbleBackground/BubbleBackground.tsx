@@ -3,17 +3,39 @@ import './BubbleBackground.scss';
 import SupplementaryClass from '../SupplementaryClass/SupplementaryClass';
 
 
-const BubbleBackground: React.FC = () => {
+interface BubbleBackgroundProps{
+    innerBubbleColor: string;
+    outerBubbleColor: string;
+    MinBubbleSize: number;
+    MaxBubbleSize: number;
+    MaxOpacity: number;
+    MinOpacity: number;
+    bubbleCreationInterval: number;
+    MaxBubbleSpeed: number;
+    MinBubbleSpeed: number;
+}
+
+const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
+    innerBubbleColor,
+    outerBubbleColor,
+    MinBubbleSize,
+    MaxBubbleSize,
+    MaxOpacity,
+    MinOpacity,
+    bubbleCreationInterval,
+    MaxBubbleSpeed,
+    MinBubbleSpeed
+}) => {
     const containerRef = useRef<HTMLDivElement>(null);
-    const [innerBubbleColor,_setInnerBubbleColor] = useState<string>('rgba(201, 0, 117, 0.1)');
-    const [outerBubbleColor,_setOuterBubbleColor] = useState<string>('rgba(206, 64, 64, 0.7)');
-    const [MinBubbleSize,_setMinBubbleSize] = useState<number>(20);
-    const [MaxBubbleSize,_setMaxBubbleSize] = useState<number>(100);
-    const [MaxOpacity,_setMaxOpacity] = useState<number>(0.8);
-    const [MinOpacity,_setMinOpacity] = useState<number>(0.1);
-    const [bubbleCreationInterval,_setBubbleCreationInterval] = useState<number>(100);
-    const [MaxBubbleSpeed,_setMaxBubbleSpeed] = useState<number>(4);
-    const [MinBubbleSpeed,_setMinBubbleSpeed] = useState<number>(1);
+    // const [innerBubbleColor,_setInnerBubbleColor] = useState<string>('rgba(201, 0, 117, 0.1)');
+    // const [outerBubbleColor,_setOuterBubbleColor] = useState<string>('rgba(206, 64, 64, 0.7)');
+    // const [MinBubbleSize,_setMinBubbleSize] = useState<number>(20);
+    // const [MaxBubbleSize,_setMaxBubbleSize] = useState<number>(100);
+    // const [MaxOpacity,_setMaxOpacity] = useState<number>(0.8);
+    // const [MinOpacity,_setMinOpacity] = useState<number>(0.1);
+    // const [bubbleCreationInterval,_setBubbleCreationInterval] = useState<number>(100);
+    // const [MaxBubbleSpeed,_setMaxBubbleSpeed] = useState<number>(4);
+    // const [MinBubbleSpeed,_setMinBubbleSpeed] = useState<number>(1);
 
     const createBubble = async () => {
         let randomSize: number = Math.floor(Math.random() * (MaxBubbleSize - MinBubbleSize)) + MinBubbleSize;
