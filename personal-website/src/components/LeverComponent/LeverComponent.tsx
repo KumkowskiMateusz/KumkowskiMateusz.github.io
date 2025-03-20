@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction } from 'react'
 
 interface LeverComponentProps {
     value : boolean;
-    onClick : Dispatch<SetStateAction<boolean>>;
+    onClick :Dispatch<SetStateAction<Record<string, boolean>>> ;
     css ?: {[key: string]: string}
 }
 

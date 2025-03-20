@@ -4,6 +4,7 @@ import BubbleBackground from '../bubbleBackground/BubbleBackground'
 import Flower from '../../assets/Gorgosaurus_BW_transparent.png'
 import IntroCard from '../IntroCard/IntroCard'
 import { useState } from 'react'
+import LeverComponent from '../LeverComponent/LeverComponent'
 
 function App() {
   const [colorPickers, setColorPickers] = useState<Record<string, string>>({
@@ -32,14 +33,14 @@ function App() {
 
   return (
     <>
-      <BubbleBackground innerBubbleColor={colorPickers.color2} outerBubbleColor={colorPickers.color3} 
+      {/* <BubbleBackground innerBubbleColor={colorPickers.color2} outerBubbleColor={colorPickers.color3} 
                         MinBubbleSize={numberInputs.input1} MaxBubbleSize={numberInputs.input2} 
                         MinOpacity={numberInputs.input3} MaxOpacity={numberInputs.input4}
                         MinBubbleSpeed={numberInputs.input5} MaxBubbleSpeed={numberInputs.input6}
                         bubbleCreationInterval={numberInputs.input7}
-                        />
+                        /> */}
       <main>
-
+          <LeverComponent value={booleanSwitches.switch1} onClick={setBooleanSwitches}/>
           <Pagesplitter 
           leftSegment={<div className='intro-card'><img src={Flower} alt="flower" style={{width: '100%', height: 'auto'}}/></div>}
           rightSegment={<IntroCard/>} 
