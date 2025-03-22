@@ -1,0 +1,60 @@
+.lever-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: clamp(30px, 6vw, 58px);
+    width: fit-content;
+}
+
+.lever-container > p {
+    display: inline-block;
+    font-weight: 100;
+    font-size: clamp(15px, 2vw, 25px);
+    text-align: end;
+    margin-inline: 10px;
+}
+
+.lever-checkbox{
+    display: none;
+}
+
+.lever-switch-active{
+    left: calc(97% - clamp(27px, 5vw, 47px));
+}
+
+.lever-switch-unactive{
+    left: 3%;
+}
+
+.lever-switch{
+    display: inline-block;
+    top: 3%;
+    position:relative;
+    width: clamp(27px, 5vw, 47px);
+    height: clamp(27px, 5vw, 47px);
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border: 1px outset #e0e0e0;
+}
+
+.lever-unactive{
+    background-color: #bebebe;
+    border: 3px inset #c9c9c9;
+}
+
+.lever-active{
+    background-color: #a0ca9c;
+    border: 3px inset #b1daad;
+}
+
+.lever{
+    display: inline-block;
+    width: clamp(70px, 10vw, 100px);
+    height: clamp(30px, 5vw, 50px);
+    border-radius: 50px;
+    cursor: pointer;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
