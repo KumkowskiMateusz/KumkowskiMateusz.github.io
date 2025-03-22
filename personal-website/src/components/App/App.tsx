@@ -5,26 +5,27 @@ import Flower from '../../assets/Gorgosaurus_BW_transparent.png'
 import IntroCard from '../IntroCard/IntroCard'
 import { useState } from 'react'
 import LeverComponent from '../LeverComponent/LeverComponent'
+import ValueSliderComponent from '../ValueSliderComponent/ValueSliderComponent'
 
 function App() {
 
-  const[colorPicker1,setColorPicker1] = useState<string>('#000000');
-  const[colorPicker2,setColorPicker2] = useState<string>('#000000');
-  const[colorPicker3,setColorPicker3] = useState<string>('#000000');
+  const[_colorPicker1,_setColorPicker1] = useState<string>('#000000');
+  const[_colorPicker2,_setColorPicker2] = useState<string>('#000000');
+  const[_colorPicker3,_setColorPicker3] = useState<string>('#000000');
 
   const [booleanSwitch1, setBooleanSwitch1] = useState<boolean>(false);
-  const [booleanSwitch2, setBooleanSwitch2] = useState<boolean>(false);
-  const [booleanSwitch3, setBooleanSwitch3] = useState<boolean>(false);
+  const [_booleanSwitch2, _setBooleanSwitch2] = useState<boolean>(false);
+  const [_booleanSwitch3, _setBooleanSwitch3] = useState<boolean>(false);
   
-  const [numberInput1, setNumberInput1] = useState<number>(0);
-  const [numberInput2, setNumberInput2] = useState<number>(0);
-  const [numberInput3, setNumberInput3] = useState<number>(0);
-  const [numberInput4, setNumberInput4] = useState<number>(0);
-  const [numberInput5, setNumberInput5] = useState<number>(0);
-  const [numberInput6, setNumberInput6] = useState<number>(0);
-  const [numberInput7, setNumberInput7] = useState<number>(0);
-  const [numberInput8, setNumberInput8] = useState<number>(0);
-  const [numberInput9, setNumberInput9] = useState<number>(0);
+  const [_numberInput1, _setNumberInput1] = useState<number>(0);
+  const [_numberInput2, _setNumberInput2] = useState<number>(0);
+  const [_numberInput3, _setNumberInput3] = useState<number>(0);
+  const [_numberInput4, _setNumberInput4] = useState<number>(0);
+  const [_numberInput5, _setNumberInput5] = useState<number>(0);
+  const [_numberInput6, _setNumberInput6] = useState<number>(0);
+  const [_numberInput7, _setNumberInput7] = useState<number>(0);
+  const [_numberInput8, _setNumberInput8] = useState<number>(0);
+  const [_numberInput9, _setNumberInput9] = useState<number>(0);
 
   return (
     <>
@@ -36,6 +37,7 @@ function App() {
                         /> */}
       <main>
           <LeverComponent label="Testing" value={booleanSwitch1} onClick={setBooleanSwitch1}/>
+          <ValueSliderComponent label="Testing" value={_numberInput1} onChange={_setNumberInput1} min={0} max={100}/>
           <Pagesplitter 
           leftSegment={
             <div className='intro-card'>
