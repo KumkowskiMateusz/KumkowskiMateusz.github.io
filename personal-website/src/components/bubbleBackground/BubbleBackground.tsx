@@ -61,7 +61,7 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
         bubble.style.top = `${window.innerHeight}px`;
         bubble.style.borderRadius = '50%';
         bubble.style.background = randomColor;
-        bubble.style.animationDuration = `${randomSpeed}s`; // Adjust duration dynamically if needed
+        bubble.style.animationDuration = `${(width >= 1000 ? randomSpeed : randomSpeed/2) }s`; // Adjust duration dynamically if needed
         await containerRef.current?.appendChild(bubble);
 
         // const id: ReturnType<typeof setInterval> = setInterval(moveBubbles, 1);
