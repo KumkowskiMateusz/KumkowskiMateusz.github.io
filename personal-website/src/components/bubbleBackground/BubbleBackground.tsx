@@ -56,9 +56,10 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
         bubble.style.top = `${window.innerHeight}px`;
         bubble.style.borderRadius = '50%';
         bubble.style.background = randomColor;
+        bubble.style.animationDuration = `${randomSpeed}s`; // Adjust duration dynamically if needed
         await containerRef.current?.appendChild(bubble);
 
-        const id: ReturnType<typeof setInterval> = setInterval(moveBubbles, 1);
+        // const id: ReturnType<typeof setInterval> = setInterval(moveBubbles, 1);
         setTimeout(() => {
             containerRef.current?.removeChild(bubble);
         }, 10000);
@@ -73,13 +74,13 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
         }
     
 
-        function moveBubbles() {
-            if(bubblePosition < -(MaxBubbleSize)){
-                clearInterval(id);
-            }
-            bubblePosition -= randomSpeed;
-            bubble.style.top = `${bubblePosition}px`;
-        }        
+        // function moveBubbles() {
+        //     if(bubblePosition < -(MaxBubbleSize)){
+        //         clearInterval(id);
+        //     }
+        //     bubblePosition -= randomSpeed;
+        //     bubble.style.top = `${bubblePosition}px`;
+        // }        
     }
 
     useEffect(() => {setInterval(() => {createBubble();}, bubbleCreationInterval);},[]);
