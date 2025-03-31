@@ -1,16 +1,9 @@
 import './App.scss'
-import Pagesplitter from '../PageSplitter/Pagesplitter'
 import BubbleBackground from '../bubbleBackground/BubbleBackground'
-import Flower from '../../assets/Gorgosaurus_BW_transparent.png'
 import IntroCard from '../IntroCard/IntroCard'
-import LeverComponent from '../LeverComponent/LeverComponent'
-import ValueSliderComponent from '../ValueSliderComponent/ValueSliderComponent'
-import { useState, useEffect } from 'react';
-import useWindowDimensions from '../../customHooks/useWindowDimension';
+import { useState } from 'react';
 
 function App() {
-
-  
 
   //Currently assigned to innerBubbleColor
   const[_colorPicker1,_setColorPicker1] = useState<string>('rgba(62, 228, 40, 0.88)');

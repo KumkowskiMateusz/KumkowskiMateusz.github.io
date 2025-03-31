@@ -1,13 +1,11 @@
-import React from 'react'
-
 interface EditContainerProps {
-    active: boolean;
+    _active: boolean;
 }
 
-const EditContainer = ({active = false}) => {
+const EditContainer = ({_active = false}:EditContainerProps) => {
 
   return (
-    <div>EditContainer</div>
+    <div>{_active}</div>
   )
 }
 

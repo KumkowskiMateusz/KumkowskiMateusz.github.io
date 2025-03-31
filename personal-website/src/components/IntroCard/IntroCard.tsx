@@ -6,7 +6,7 @@ import Flower from '../../assets/Gorgosaurus_BW_transparent.png'
 
 const IntroCard = () => {
 
-  const { width,height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   if (width < 800) {
     return (

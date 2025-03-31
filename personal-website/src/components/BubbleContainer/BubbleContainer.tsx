@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import './BubbleContainer.scss'
 
 interface BubbleContainerProps {
