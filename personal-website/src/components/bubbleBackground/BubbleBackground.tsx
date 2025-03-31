@@ -58,7 +58,7 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
         bubble.style.background = randomColor;
         await containerRef.current?.appendChild(bubble);
 
-        const id: ReturnType<typeof setInterval> = setInterval(moveBubbles, 10);
+        const id: ReturnType<typeof setInterval> = setInterval(moveBubbles, 1);
         setTimeout(() => {
             containerRef.current?.removeChild(bubble);
         }, 10000);
