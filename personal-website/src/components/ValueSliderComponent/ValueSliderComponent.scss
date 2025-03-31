@@ -1,3 +1,24 @@
-.value-slider-input-error{
-    color:red
+.value-slider-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: clamp(30px, 6vw, 58px);
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+.value-slider-container > p{
+    display: inline-block;
+    font-weight: 100;
+    font-size: clamp(15px, 2vw, 25px);
+    text-align: end;
+    margin-inline: 10px;
+}
+
+.value-slider-input{
+    display: inline-block;
+    width: clamp(70px, 10vw, 100px);
+    height: 30px;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
