@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './BubbleBackground.scss';
 import SupplementaryClass from '../SupplementaryClass/SupplementaryClass';
+import useWindowDimensions from '../../customHooks/useWindowDimension';
 
 
 interface BubbleBackgroundProps{
@@ -36,6 +37,7 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
     // const [bubbleCreationInterval,_setBubbleCreationInterval] = useState<number>(100);
     // const [MaxBubbleSpeed,_setMaxBubbleSpeed] = useState<number>(4);
     // const [MinBubbleSpeed,_setMinBubbleSpeed] = useState<number>(1);
+    const {width} = useWindowDimensions();
 
     const createBubble = async () => {
         let randomSize: number = Math.floor(Math.random() * (MaxBubbleSize - MinBubbleSize)) + MinBubbleSize;
@@ -45,7 +47,10 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
         const randomColors : number[] = randomBubbleColor();
         const randomColor: string = `radial-gradient(circle at 60% 35%, rgba(${randomColors[0]}, ${randomColors[1]}, ${randomColors[2]}, ${MinOpacity}) 30%, rgba(${randomColors[0]}, ${randomColors[1]}, ${randomColors[2]}, ${randomOpacity}) 70%)` ;
         const bubble : HTMLDivElement = document.createElement('div');
-        let bubblePosition : number = window.innerHeight;
+        // let bubblePosition : number = window.innerHeight;
+
+
+
 
         bubble.classList.add('bubble');
         bubble.style.width = `${randomSize}px`;
@@ -83,7 +88,8 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
         // }        
     }
 
-    useEffect(() => {setInterval(() => {createBubble();}, bubbleCreationInterval);},[]);
+
+    useEffect(() => {setInterval(() => {createBubble();}, (width >= 1000 ? bubbleCreationInterval : bubbleCreationInterval/2) );},[]);
 
     return <>
         <div className='bubbles-container' ref={containerRef}>
