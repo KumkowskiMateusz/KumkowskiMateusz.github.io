@@ -2,9 +2,11 @@ import './IntroCard.scss'
 import useWindowDimensions from '../../customHooks/useWindowDimension';
 import Pagesplitter from '../PageSplitter/Pagesplitter'
 import Flower from '../../assets/Gorgosaurus_BW_transparent.png'
+import CardComponent from '../Card/CardComponent';
 
 
 const IntroCard = () => {
+
 
   const { width } = useWindowDimensions();
 
@@ -21,9 +23,9 @@ const IntroCard = () => {
   else {
     return (<Pagesplitter 
     leftSegment={
-      <div className='intro-card'>
+      <CardComponent content={<div className='intro-card'>
         <img src={Flower} alt="flower" style={{width: '100%', height: 'auto'}}/>
-      </div>}
+      </div>}/>}
     rightSegment={
       <div className='intro-card'>
         <h1 className='intro'>Mateusz</h1>
