@@ -37,7 +37,6 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
     // const [bubbleCreationInterval,_setBubbleCreationInterval] = useState<number>(100);
     // const [MaxBubbleSpeed,_setMaxBubbleSpeed] = useState<number>(4);
     // const [MinBubbleSpeed,_setMinBubbleSpeed] = useState<number>(1);
-    const {width} = useWindowDimensions();
 
     const createBubble = async () => {
         let randomSize: number = Math.floor(Math.random() * (MaxBubbleSize - MinBubbleSize)) + MinBubbleSize;
@@ -61,7 +60,7 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
         bubble.style.top = `${window.innerHeight}px`;
         bubble.style.borderRadius = '50%';
         bubble.style.background = randomColor;
-        bubble.style.animationDuration = `${(width >= 1000 ? randomSpeed : randomSpeed*2) }s`; // Adjust duration dynamically if needed
+        bubble.style.animationDuration = `${randomSpeed}s`; // Adjust duration dynamically if needed
         await containerRef.current?.appendChild(bubble);
 
         // const id: ReturnType<typeof setInterval> = setInterval(moveBubbles, 1);
@@ -89,7 +88,7 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
     }
 
 
-    useEffect(() => {setInterval(() => {createBubble();}, (width >= 1000 ? bubbleCreationInterval : bubbleCreationInterval/2) );},[]);
+    useEffect(() => {setInterval(() => {createBubble();}, bubbleCreationInterval);},[]);
 
     return <>
         <div className='bubbles-container' ref={containerRef}>
