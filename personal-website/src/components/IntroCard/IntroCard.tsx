@@ -7,7 +7,6 @@ import CardComponent from '../Card/CardComponent';
 
 const IntroCard = () => {
 
-
   const { width } = useWindowDimensions();
 
   if (width < 800) {
@@ -23,9 +22,9 @@ const IntroCard = () => {
   else {
     return (<Pagesplitter 
     leftSegment={
-      <CardComponent content={<div className='intro-card'>
+      <div className='intro-card'>
         <img src={Flower} alt="flower" style={{width: '100%', height: 'auto'}}/>
-      </div>}/>}
+      </div>}
     rightSegment={
       <div className='intro-card'>
         <h1 className='intro'>Mateusz</h1>

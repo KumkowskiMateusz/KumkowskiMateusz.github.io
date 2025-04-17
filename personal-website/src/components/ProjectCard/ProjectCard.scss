@@ -1,0 +1,48 @@
+.project-card-horizontal{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 25fr 70fr 5fr;
+    grid-template-rows: 2fr 3fr 1fr 1fr;
+}
+
+.project-card-horizontal .project-card-image{
+    grid-column: 1;
+    grid-row: 1 / span 3;
+}
+
+.project-card-horizontal .project-card-title{
+    grid-column: 2/span 2;
+    grid-row: 1;
+}
+
+.project-card-horizontal .project-card-description{
+    grid-column: 2/span 2;
+    grid-row: 2;
+}
+
+.project-card-horizontal .project-card-tech-stack{
+    grid-column: 3/span 2;
+    grid-row: 3;
+}
+
+.project-card-horizontal .project-card-link{
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.project-card-vertical{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 3fr 1fr 1fr;
+}
+
+.project-card-vertical .project-card-image{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.project-card-vertical .project-card-title{
+    grid-column: 1;
+    grid-row: 2;
+}
