@@ -1,7 +1,8 @@
 import React from 'react'
 import useWindowDimensions from '../../customHooks/useWindowDimension';
 import githubLogo from '../../assets/github-image.png'
-import './ProjectCard.scss'
+import defaultImage from '../../assets/project-images/default-project-image.png'
+import './ProjectCard.css'
 
 interface ProjectCardProps {
     _name: string;
@@ -13,11 +14,11 @@ interface ProjectCardProps {
     _image ?: string;
 }    
 
-const ProjectCard = ({_name,_description,_technologies,_date,_repo="",_link="",_image="default-project-image.png"}:ProjectCardProps) => {
+const ProjectCard = ({_name,_description,_technologies,_date,_repo="www.google.com",_link="www.google.com",_image="default-project-image.png"}:ProjectCardProps) => {
   
     let {width,height} = useWindowDimensions();
-    width = Math.round(width/3);
-    height = Math.round(height/3);
+    width = Math.round(width/2);
+    height = Math.round(height/2);
 
 
     return <div 
@@ -25,13 +26,12 @@ const ProjectCard = ({_name,_description,_technologies,_date,_repo="",_link="",_
         key={_name} 
         style={{ width: `${width}px`, height: `${height}px` }}>
         
-        <React.Image src={`./assets/project-images/${_image}`} alt='project-image' className='project-image'/>
-        <img src={`./assets/project-images/${_image}`} alt='project-image' className='project-image'/>
+        <img src={defaultImage} alt='project-image' className='project-image'/>
         <h1 className='project-name'>{_name}</h1>
         <h2 className='project-description'>{_description}</h2>
-        <h3 className='project-technologies'>{_technologies.join(" ")}</h3>
+        <h3 className='project-technologies'>{_technologies.join(", ")}</h3>
         <h3 className='project-date'>{_date}</h3>
-        <a className='repo-link' href={_repo}>{<img src={githubLogo}></img>}</a>
+        <a className='project-repo-link' rel={'external'} target="_blank" href={`https://${_repo}`}>{<img src={githubLogo}  width={"20px"} height={"20px"}></img>}</a>
 
 
     </div>
