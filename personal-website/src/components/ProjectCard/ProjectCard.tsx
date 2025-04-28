@@ -2,6 +2,7 @@ import React from 'react'
 import useWindowDimensions from '../../customHooks/useWindowDimension';
 import githubLogo from '../../assets/github-image.png'
 import defaultImage from '../../assets/project-images/default-project-image.png'
+import CardComponent from '../Card/CardComponent';
 import './ProjectCard.css'
 
 interface ProjectCardProps {
@@ -14,14 +15,15 @@ interface ProjectCardProps {
     _image ?: string;
 }    
 
-const ProjectCard = ({_name,_description,_technologies,_date,_repo="www.google.com",_link="www.google.com",_image="default-project-image.png"}:ProjectCardProps) => {
+const ProjectCard = ({_name,_description,_technologies=[],_date,_repo="www.google.com",_link="www.google.com",_image="default-project-image.png"}:ProjectCardProps) => {
   
     let {width,height} = useWindowDimensions();
     width = Math.round(width/2);
     height = Math.round(height/2);
 
 
-    return <div 
+    return <CardComponent content={
+    <div 
         className= {`${width >= height ? "project-card-horizontal" : "project-card-vertical"}`} 
         key={_name} 
         style={{ width: `${width}px`, height: `${height}px` }}>
@@ -35,6 +37,7 @@ const ProjectCard = ({_name,_description,_technologies,_date,_repo="www.google.c
 
 
     </div>
+    }/>
     
 
 

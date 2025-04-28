@@ -2,8 +2,7 @@ import './App.scss'
 import BubbleBackground from '../bubbleBackground/BubbleBackground'
 import IntroCard from '../IntroCard/IntroCard'
 import { useState } from 'react';
-import ProjectCard from '../ProjectCard/ProjectCard';
-import CardComponent from '../Card/CardComponent';
+import ProjectGrid from '../ProjectGrid/ProjectGrid';
 
 function App() {
 
@@ -59,13 +58,7 @@ function App() {
         
 
           <h1>Skills</h1>
-          <CardComponent content={<ProjectCard _name='Java Fullstack Developer'
-                          _description='Java Fullstack Developer with experience in Spring Boot, React, and AWS. Proficient in developing scalable applications and implementing CI/CD pipelines.'
-                          _technologies={['Java', 'Spring Boot', 'React', 'AWS', 'Docker', 'Jenkins', 'JUnit']}
-                          _date='2023'></ProjectCard>
-          }>
-            
-          </CardComponent>
+          <ProjectGrid/>
 
           <p>Interactive graph Segmenting between languages/libraries/frameworks/tools that shows years worked with tools</p>
 
