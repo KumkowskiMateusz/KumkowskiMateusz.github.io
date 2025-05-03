@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './BubbleBackground.scss';
 import SupplementaryClass from '../SupplementaryClass/SupplementaryClass';
-import useWindowDimensions from '../../customHooks/useWindowDimension';
 
 
 interface BubbleBackgroundProps{

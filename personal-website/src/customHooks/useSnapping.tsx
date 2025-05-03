@@ -1,4 +1,3 @@
-import { Dir } from 'fs';
 import React from 'react'
 import { useScrollDirection } from './useScrollDirection';
 

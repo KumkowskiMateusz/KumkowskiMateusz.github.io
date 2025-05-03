@@ -1,4 +1,3 @@
-import React from 'react'
 import useWindowDimensions from '../../customHooks/useWindowDimension';
 import githubLogo from '../../assets/github-image.png'
 import defaultImage from '../../assets/project-images/default-project-image.png'
@@ -20,6 +19,8 @@ const ProjectCard = ({_name,_description,_technologies=[],_date,_repo="www.googl
     let {width,height} = useWindowDimensions();
     width = Math.round(width/2);
     height = Math.round(height/2);
+    _link = _link || "https://www.google.com";
+    _image = _image || defaultImage;
 
 
     return <CardComponent content={

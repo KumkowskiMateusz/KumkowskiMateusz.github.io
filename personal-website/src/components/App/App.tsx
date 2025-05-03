@@ -1,7 +1,7 @@
 import './App.scss'
 import BubbleBackground from '../bubbleBackground/BubbleBackground'
 import IntroCard from '../IntroCard/IntroCard'
-import { use, useState } from 'react';
+import { useState } from 'react';
 import ProjectGrid from '../ProjectGrid/ProjectGrid';
 import useSnapping from '../../customHooks/useSnapping';
 

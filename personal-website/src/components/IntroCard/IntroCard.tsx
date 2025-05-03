@@ -2,8 +2,6 @@ import './IntroCard.scss'
 import useWindowDimensions from '../../customHooks/useWindowDimension';
 import Pagesplitter from '../PageSplitter/Pagesplitter'
 import Flower from '../../assets/Gorgosaurus_BW_transparent.png'
-import CardComponent from '../Card/CardComponent';
-
 
 const IntroCard = () => {
 

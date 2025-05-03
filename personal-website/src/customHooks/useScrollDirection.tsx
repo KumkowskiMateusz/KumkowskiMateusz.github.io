@@ -7,7 +7,6 @@ enum ScrollDirection {
 
 const useScrollDirection = (): ScrollDirection => {
     const [scrollDirection, setScrollDirection] = useState<ScrollDirection>(ScrollDirection.DOWN);
-    const threshold = 0; // Minimum scroll distance to detect a direction change
 
     useEffect(() => {
         let lastScrollY = window.scrollY;
@@ -26,7 +25,7 @@ const useScrollDirection = (): ScrollDirection => {
                 lastScrollY = currentScrollY; // Update lastScrollY after detecting a change
         };
 
-        let x = window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
