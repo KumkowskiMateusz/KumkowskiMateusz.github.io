@@ -41,6 +41,8 @@
     .project-description {
         grid-column: 2 / span 2;
         grid-row: 2;
+        height: 100%;
+        vertical-align: top;
     }
 
     .project-technologies {
@@ -69,7 +71,7 @@
     display: grid;
     gap: 5px;
     grid-template-columns: 1fr 10fr 1fr;
-    grid-template-rows: 5fr 2fr min-content 1fr 1fr;
+    grid-template-rows: 50% min-content 5fr 1fr min-content;
     padding: 5px;
 
     h1 {
@@ -113,6 +115,8 @@
         grid-column: 1 / span 3;
         grid-row: 3;
         margin: 0;
+        height: 100%;
+        vertical-align: top;
     }
 
     .project-technologies {
@@ -124,6 +128,7 @@
         grid-column: 3;
         margin: 0;
         vertical-align: top;
+        filter: invert(1);
     }
 
     .project-date{

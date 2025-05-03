@@ -1,8 +1,9 @@
 import './App.scss'
 import BubbleBackground from '../bubbleBackground/BubbleBackground'
 import IntroCard from '../IntroCard/IntroCard'
-import { useState } from 'react';
+import { use, useState } from 'react';
 import ProjectGrid from '../ProjectGrid/ProjectGrid';
+import useSnapping from '../../customHooks/useSnapping';
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
 
   const [_numberInput8, _setNumberInput8] = useState<number>(0);
   const [_numberInput9, _setNumberInput9] = useState<number>(0);
+ useSnapping({div_id: "about-me"});
+  
 
   return (
     <>
@@ -47,12 +50,13 @@ function App() {
 
         <IntroCard/>
 
-        <h1>About Me</h1>
-        <p>As a passionate and driven Computer Science enthusiast, I am deeply committed to expanding my technical expertise and exploring innovative solutions to real-world problems. I’ve had hands-on experience developing full-stack applications using Spring Boot, React, and AWS, while also applying modern tools like Docker, Jenkins, and JUnit to create scalable, secure, and efficient systems. I thrive in collaborative, Agile environments and have taken on leadership roles such as Scrum Master to drive team productivity and ensure timely delivery.</p>
-        <p>Currently, I am eager to further my career by seeking an internship/associate position within New York, where I can leverage my skills in software development and continue to grow in areas like cloud architecture, DevOps, and data analytics. My focus is to gain practical experience, contribute to impactful projects, and further develop my problem-solving abilities.</p>
-        <p>I’m excited to learn from professionals in the field and bring my enthusiasm for technology and continuous improvement to new challenges.</p>
-        <p>Image slideshow w/ info</p>
-
+        <div id='about-me' className='about-me'>
+          <h1>About Me</h1>
+          <p>As a passionate and driven Computer Science enthusiast, I am deeply committed to expanding my technical expertise and exploring innovative solutions to real-world problems. I’ve had hands-on experience developing full-stack applications using Spring Boot, React, and AWS, while also applying modern tools like Docker, Jenkins, and JUnit to create scalable, secure, and efficient systems. I thrive in collaborative, Agile environments and have taken on leadership roles such as Scrum Master to drive team productivity and ensure timely delivery.</p>
+          <p>Currently, I am eager to further my career by seeking an internship/associate position within New York, where I can leverage my skills in software development and continue to grow in areas like cloud architecture, DevOps, and data analytics. My focus is to gain practical experience, contribute to impactful projects, and further develop my problem-solving abilities.</p>
+          <p>I’m excited to learn from professionals in the field and bring my enthusiasm for technology and continuous improvement to new challenges.</p>
+          <p>Image slideshow w/ info</p>
+        </div>
         <h1>Projects</h1>
         <p>Project slideshow with clickable images for more information</p>
         
@@ -61,11 +65,6 @@ function App() {
           <ProjectGrid/>
 
           <p>Interactive graph Segmenting between languages/libraries/frameworks/tools that shows years worked with tools</p>
-
-        <h1>Contact Information</h1>
-        <p>email: mateuszkumkowski2002@gmail.com</p>
-        <p>linkedin: https://www.linkedin.com/in/kumkowskimateusz/</p>
-        <p>github: https://github.com/KumkowskiMateusz</p>
       </main>
     </>
   )

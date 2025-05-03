@@ -42,13 +42,19 @@ const ProjectGrid = () => {
 
   return (
     <div id="projects-container">
-          <CardComponent content={<div onClick={handlePrevProject} style={{ width: `${width}px`, height: `${height}px` }}>Prev</div>}></CardComponent>
+          <CardComponent content={<div id="void-project-card-prev" className="void-project-card prevent-select" onClick={handlePrevProject} style={{ width: `${width}px`, height: `${height}px` }}>
+          { width > height ? (shownProjectIndex > 0 ? array[shownProjectIndex - 1].name : array[array.length - 1].name) : ""}
+            </div>}>
+          </CardComponent>
           
           <ProjectCard key={shownProject.name} _name={shownProject.name} _description={shownProject.description} 
           _technologies={shownProject.technologies} _date={shownProject.date} _repo={shownProject.repo} _link={shownProject.link} 
           />
           
-          <CardComponent content={<div onClick={handleNextProject} style={{ width: `${width}px`, height: `${height}px` }}>Next</div>}></CardComponent>
+          <CardComponent content={<div id="void-project-card-next" className="void-project-card prevent-select" onClick={handleNextProject} style={{ width: `${width}px`, height: `${height}px` }}>
+              { width > height ? (shownProjectIndex + 1 < array.length ? array[shownProjectIndex + 1].name : array[0].name) : ""}
+              </div>}>
+          </CardComponent>
     </div>
   )
 }

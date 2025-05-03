@@ -12,10 +12,12 @@ const IntroCard = () => {
   if (width < 800) {
     return (
       <div className='intro-card'>
-          <h1 className='intro'>Mateusz</h1>
-          <h1 className='intro'>Kumkowski.</h1>
-          <br></br>
-          <h3 className='subintro'>Java Fullstack Developer</h3>
+          <div className='intro-card-container'>
+            <h1 className='intro'>Mateusz</h1>
+            <h1 className='intro'>Kumkowski.</h1>
+            <br></br>
+            <h3 className='subintro'>Java Fullstack Developer</h3>
+          </div>
       </div>
     )
   }
@@ -27,10 +29,12 @@ const IntroCard = () => {
       </div>}
     rightSegment={
       <div className='intro-card'>
-        <h1 className='intro'>Mateusz</h1>
-        <h1 className='intro'>Kumkowski.</h1>
-        <br></br>
-        <h3 className='subintro'>Java Fullstack Developer</h3>
+        <div className='intro-card-container'>
+          <h1 className='intro'>Mateusz</h1>
+          <h1 className='intro'>Kumkowski.</h1>
+          <br></br>
+          <h3 className='subintro'>Java <span>Fullstack Developer</span></h3>
+        </div>
       </div>
     } 
     />)

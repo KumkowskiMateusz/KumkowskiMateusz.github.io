@@ -20,4 +20,20 @@
     justify-content: center;
     height: 100vh;
     text-rendering: auto;
+
+    h1{
+        font-size: clamp(2rem,10vw,7rem);
+    }
+
+    span{
+        color: #8fff87;
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 10px;
+    }
+}
+
+.intro-card-container{
+    width: min-content;
+    height: min-content;
 }
