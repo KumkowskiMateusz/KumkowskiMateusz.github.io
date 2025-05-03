@@ -18,23 +18,25 @@ function App() {
   const [_booleanSwitch3, _setBooleanSwitch3] = useState<boolean>(false);
   
   //Currently assigned to MinBubbleSize
-  const [_numberInput1, _setNumberInput1] = useState<number>(10);
+  const [_numberInput1, _setNumberInput1] = useState<number>(20);
   //Currently assigned to MaxBubbleSize
-  const [_numberInput2, _setNumberInput2] = useState<number>(50);
+  const [_numberInput2, _setNumberInput2] = useState<number>(70);
   //Currently assigned to MinOpacity
   const [_numberInput3, _setNumberInput3] = useState<number>(0.1);
   //Currently assigned to MaxOpacity
   const [_numberInput4, _setNumberInput4] = useState<number>(0.8);
-  //Currently assigned to MinBubbleSpeed
-  const [_numberInput5, _setNumberInput5] = useState<number>(1);
   //Currently assigned to MaxBubbleSpeed
-  const [_numberInput6, _setNumberInput6] = useState<number>(5);
+  const [_numberInput5, _setNumberInput5] = useState<number>(15);
+  //Currently assigned to MinBubbleSpeed
+  const [_numberInput6, _setNumberInput6] = useState<number>(3);
   //Currently assigned to bubbleCreationInterval
-  const [_numberInput7, _setNumberInput7] = useState<number>(100);
+  const [_numberInput7, _setNumberInput7] = useState<number>(200);
 
   const [_numberInput8, _setNumberInput8] = useState<number>(0);
   const [_numberInput9, _setNumberInput9] = useState<number>(0);
- useSnapping({div_id: "about-me"});
+ useSnapping({div_id: "about-me",sensitivity: 800, direction: "both",sensitivityRange: 300});
+ useSnapping({div_id: "intro", sensitivity: 800,direction: "both",sensitivityRange: 300});
+
   
 
   return (
@@ -47,8 +49,9 @@ function App() {
                         />}
       <main>
           
-
-        <IntroCard/>
+        <div id='intro'>
+          <IntroCard/>
+        </div>
 
         <div id='about-me' className='about-me'>
           <h1>About Me</h1>
