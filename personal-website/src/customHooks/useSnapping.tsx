@@ -17,14 +17,14 @@ const useSnapping = ({div_id,direction="both",sensitivity=500,sensitivityRange=1
     React.useEffect(() => {
         const element = document.getElementById(div_id);
         
-        const handleScroll =() => {
+        const handleScroll =(e : any) => {
                 if (element == null) {console.error(`Element with id ${div_id} not found`); return;}
                 let location = (element?.getBoundingClientRect()?.top || 0);
 
                 // If individual is scrolling down 
                 if(ScrollDirection === 'down' && (direction === 'top'  || direction === "both")){
                     if (location >= sensitivity && location <= (sensitivity + sensitivityRange)) {
-                        // Scroll to the element smoothly
+                        e.preventDefault(); // Prevent default scrolling behavior
                         element.scrollIntoView({ block:"start", behavior: 'smooth' });
                     }
                 }
@@ -32,7 +32,7 @@ const useSnapping = ({div_id,direction="both",sensitivity=500,sensitivityRange=1
                 location = (element?.getBoundingClientRect()?.top || 0);
                 if(ScrollDirection === 'up' && (direction === 'bottom' || direction === "both")){
                     if (location <= -sensitivity && location >= -sensitivity - sensitivityRange) {
-                        // Scroll to the element smoothly
+                        e.preventDefault(); // Prevent default scrolling behavior
                         element.scrollIntoView({ block:"start", behavior: 'smooth' });
                     }
                 }
