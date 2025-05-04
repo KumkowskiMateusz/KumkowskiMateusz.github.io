@@ -4,6 +4,7 @@ import IntroCard from '../IntroCard/IntroCard'
 import { useState } from 'react';
 import ProjectGrid from '../ProjectGrid/ProjectGrid';
 import useSnapping from '../../customHooks/useSnapping';
+import useWindowDimensions from '../../customHooks/useWindowDimension';
 
 function App() {
 
@@ -34,8 +35,13 @@ function App() {
 
   const [_numberInput8, _setNumberInput8] = useState<number>(0);
   const [_numberInput9, _setNumberInput9] = useState<number>(0);
- useSnapping({div_id: "about-me",sensitivity: 800, direction: "both",sensitivityRange: 200});
- useSnapping({div_id: "intro", sensitivity: 800,direction: "both",sensitivityRange: 200});
+
+  let {width,height} = useWindowDimensions();
+
+  if(width > height){
+    useSnapping({div_id: "about-me",sensitivity: 800, direction: "both",sensitivityRange: 200});
+    useSnapping({div_id: "intro", sensitivity: 800,direction: "both",sensitivityRange: 200});
+  }
 
   
 

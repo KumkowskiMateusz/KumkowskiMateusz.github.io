@@ -7,7 +7,7 @@
 
 .subintro {
     font-weight: 400;
-    font-size: clamp(1.5rem,6vw,2rem);
+    font-size: clamp(1.2rem,2vw,3rem);
     margin-bottom: 1rem;
     font-style: italic;
     display: inline-block;
@@ -31,9 +31,33 @@
         text-decoration-thickness: 3px;
         text-underline-offset: 10px;
     }
+
 }
 
 .intro-card-container{
     width: min-content;
     height: min-content;
+
+    img {
+        padding: 2px;
+        background-color: white;
+        border-radius: 50%;
+        transition: all 0.1s linear;
+    }
+
+    img:hover {
+        transform: scale(1.05);
+        filter: brightness(0.8);
+        box-shadow: rgba(193, 241, 189, 0.8) 0 0 20px 5px;
+    }
+
+}
+
+.media-flexbox{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 1.5rem;
 }
