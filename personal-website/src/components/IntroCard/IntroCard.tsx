@@ -1,12 +1,11 @@
 import './IntroCard.scss'
 import useWindowDimensions from '../../customHooks/useWindowDimension';
 import Pagesplitter from '../PageSplitter/Pagesplitter'
-import Flower from '../../assets/Gorgosaurus_BW_transparent.png'
-import BubbleContainer from '../BubbleContainer/BubbleContainer';
 import GithubLogo from '../../assets/github-image.png'
 import LinkedIn from '../../assets/linkedin.png'
 import Resume from '../../assets/Mateusz_Kumkowski_Resume.pdf'
 import resumeimg from '../../assets/resume.png'
+import myImage from '../../assets/MyImage.jpg'
 
 const IntroCard = () => {
 
@@ -35,7 +34,7 @@ const IntroCard = () => {
     return (<Pagesplitter 
     leftSegment={
       <div className='intro-card'>
-        <img src={Flower} alt="flower" style={{width: '100%', height: 'auto'}}/>
+        <img src={myImage} alt="me" style={{width:'50%',height:'auto', objectFit:'cover' ,border:"white 5px solid",borderRadius:'50%'}}/>
       </div>}
     rightSegment={
       <>

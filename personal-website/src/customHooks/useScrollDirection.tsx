@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 enum ScrollDirection {
     UP = "up",
     DOWN = "down",
+    NONE = "none",
 }
+
 
 const useScrollDirection = (): ScrollDirection => {
     const [scrollDirection, setScrollDirection] = useState<ScrollDirection>(ScrollDirection.DOWN);
@@ -12,15 +14,19 @@ const useScrollDirection = (): ScrollDirection => {
         let lastScrollY = window.scrollY;
 
         const handleScroll = () => {
+            const scrollThreshold = 0; // Set a threshold to avoid small scrolls triggering the event
             const currentScrollY = window.scrollY;
 
             // Only update direction if the scroll distance exceeds the threshold
            
-                if (currentScrollY > lastScrollY) {
+                if (currentScrollY > lastScrollY + scrollThreshold) {
                     setScrollDirection(ScrollDirection.DOWN);
                 } 
-                else if (currentScrollY <= lastScrollY) {
+                else if (currentScrollY < lastScrollY - scrollThreshold) {
                     setScrollDirection(ScrollDirection.UP);
+                }
+                else{
+                    setScrollDirection(ScrollDirection.NONE);
                 }
                 lastScrollY = currentScrollY; // Update lastScrollY after detecting a change
         };
@@ -32,6 +38,7 @@ const useScrollDirection = (): ScrollDirection => {
         };
     }, []);
 
+    console.log(scrollDirection); // Log the scroll direction for debugging
     return scrollDirection;
 };
 

@@ -1,0 +1,8 @@
+.navbar-segment{
+    transition: all 0.1s ease-in-out;
+}
+
+.navbar-segment:hover{
+    box-shadow: rgba(255, 255, 255, 0.425) 0px 0px 50px 1px;
+    background-color: rgba(255, 255, 255, 0.068);
+}
