@@ -57,26 +57,7 @@ h1 ~ p {
   user-select: none; /* Standard syntax */
 }
 
-.about-me{
-  // backdrop-filter: invert(1);
-  width: 80%;
-  height: 100vh;
-  padding-inline: 10%;
-  padding-block:3%;
 
-  h1{
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.822) , rgb(255, 255, 255));
-    color:  transparent;
-    background-clip: text;
-  }
-
-  p{
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.76) , rgb(255, 255, 255));
-    color:  transparent;
-    background-clip: text;
-  }
-
-}
 
   
 
