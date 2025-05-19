@@ -5,7 +5,10 @@ import { useState } from 'react';
 import ProjectGrid from '../ProjectGrid/ProjectGrid';
 import Navbar from '../Navbar/Navbar';
 import TransitionLine from '../TransitionLine/TransitionLine';
-import AboutMe from './AboutMe/AboutMe';
+import AboutMe from '../AboutMe/AboutMe';
+import InformationTableHeader from '../InformationTable/InformationTableHeader/InformationTableHeader';
+import InformationTableHeaderSegment from '../InformationTable/InformationTableHeader/InformationTableHeaderSegment/InformationTableHeaderSegment';
+import InformationTable from '../InformationTable/InformationTable';
 
 function App() {
 
@@ -59,7 +62,7 @@ function App() {
 
         <h1>Projects</h1>
         <p>Project slideshow with clickable images for more information</p>
-        
+          <InformationTable></InformationTable>
 
           <h1>Skills</h1>
           <ProjectGrid/>

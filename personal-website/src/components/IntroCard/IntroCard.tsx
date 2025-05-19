@@ -1,11 +1,11 @@
 import './IntroCard.scss'
 import useWindowDimensions from '../../customHooks/useWindowDimension';
 import Pagesplitter from '../PageSplitter/Pagesplitter'
-import GithubLogo from '../../assets/github-image.png'
-import LinkedIn from '../../assets/linkedin.png'
-import Resume from '../../assets/Mateusz_Kumkowski_Resume.pdf'
-import resumeimg from '../../assets/resume.png'
-import myImage from '../../assets/MyImage.jpg'
+import GithubLogo from '../../assets/linksImages/github-image.png'
+import LinkedIn from '../../assets/linksImages/linkedin.png'
+import Resume from '../../assets/linksImages/Mateusz_Kumkowski_Resume.pdf'
+import resumeimg from '../../assets/linksImages/resume.png'
+import myImage from '../../assets/personalImages/MyImage.jpg'
 
 const IntroCard = () => {
 

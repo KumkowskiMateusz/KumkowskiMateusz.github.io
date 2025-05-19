@@ -1,0 +1,9 @@
+#information-table {
+  display: grid;
+  grid-template-rows: 100px 500px;
+  width: 80%;
+  height: 500px;
+  margin-inline: auto;
+  border-collapse: collapse;
+  gap: 10px
+}

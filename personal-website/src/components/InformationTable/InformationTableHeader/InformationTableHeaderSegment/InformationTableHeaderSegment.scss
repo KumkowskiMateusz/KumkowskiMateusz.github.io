@@ -1,0 +1,31 @@
+.information-table-header-segment{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    object-fit: scale-down;
+    margin:0;
+}
+
+.information-table-header-segment-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(193, 241, 189, 0.062);
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 1px rgba(193, 241, 189, 0.5);
+    transition: all 0.1s ease-in-out;
+    overflow: hidden;
+
+}
+
+.information-table-header-segment-container:hover{
+
+    width: 90px;
+    height: 90px;
+    box-shadow: 0 0 20px 1px rgba(193, 241, 189, 0.5);
+    filter: brightness(0.8);
+    cursor: pointer;
+
+}
