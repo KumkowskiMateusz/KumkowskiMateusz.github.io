@@ -8,7 +8,7 @@ interface NavbarSegmentProps {
 
 const NavbarSegment: React.FC<NavbarSegmentProps> = ({ text,hyperlink }) => {
     return (
-        <li><a id={`navbar-segment-${text}`} class='navbar-segment' href={hyperlink} style={{ color: '#fff', textDecoration: 'none' }}>{text}</a></li>
+        <li><a id={`navbar-segment-${text}`} className='navbar-segment' href={hyperlink} style={{ color: '#fff', textDecoration: 'none' }}>{text}</a></li>
     );
 };
 

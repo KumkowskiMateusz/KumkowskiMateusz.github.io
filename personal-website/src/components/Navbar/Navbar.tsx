@@ -1,7 +1,7 @@
 import React, { use } from 'react';
 import NavbarSegment from './NavbarSegment/NavbarSegment';
 import './Navbar.scss';
-import useWindowDimensions from '../../../customHooks/useWindowDimension';
+import useWindowDimensions from '../../customHooks/useWindowDimension';
 
 const Navbar: React.FC = () => {
 
@@ -47,8 +47,8 @@ React.useEffect(() => {
     return (
         <nav style={{display: 'flex', justifyContent: (width < 800 ? "center" : "space-between"), alignItems: 'center',paddingBlock:'1rem' ,paddingInline:'5rem'}}>
             
-            {width < 800 ? <></> :  <div style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>
-                MyWebsite
+            {width < 800 ? <></> :  <div style={{ fontWeight: 'bold', fontSize: '1.5rem', textDecoration:'underline' }}>
+                Mateusz Kumkowski
             </div>}
     
             <div id='navbar-grid'>

@@ -58,11 +58,11 @@ h1 ~ p {
 }
 
 .about-me{
-  backdrop-filter: invert(1);
-  width: 94%;
+  // backdrop-filter: invert(1);
+  width: 80%;
   height: 100vh;
-  padding: 3%;
-  background: linear-gradient(135deg, rgba(11, 11, 34, 0.699), rgba(11, 11, 34, 0.363));
+  padding-inline: 10%;
+  padding-block:3%;
 
   h1{
     background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.822) , rgb(255, 255, 255));

@@ -5,7 +5,9 @@ import { useState } from 'react';
 import ProjectGrid from '../ProjectGrid/ProjectGrid';
 import useSnapping from '../../customHooks/useSnapping';
 import useWindowDimensions from '../../customHooks/useWindowDimension';
-import Navbar from './Navbar/Navbar';
+import Navbar from '../Navbar/Navbar';
+import TransitionGradient from '../TransitionGradient/TransitionGradient';
+import TransitionLine from '../TransitionLine/TransitionLine';
 
 function App() {
 
@@ -32,7 +34,7 @@ function App() {
   //Currently assigned to MinBubbleSpeed
   const [_numberInput6, _setNumberInput6] = useState<number>(3);
   //Currently assigned to bubbleCreationInterval
-  const [_numberInput7, _setNumberInput7] = useState<number>(200);
+  const [_numberInput7, _setNumberInput7] = useState<number>(500);
 
   const [_numberInput8, _setNumberInput8] = useState<number>(0);
   const [_numberInput9, _setNumberInput9] = useState<number>(0);
@@ -51,7 +53,7 @@ function App() {
         <div id='intro'>
           <IntroCard/>
         </div>
-
+        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='auto' marginRight='0px' marginBlock='2rem'/>
         <div id='about-me' className='about-me'>
           <h1>About Me</h1>
           <p>As a passionate and driven Computer Science enthusiast, I am deeply committed to expanding my technical expertise and exploring innovative solutions to real-world problems. I’ve had hands-on experience developing full-stack applications using Spring Boot, React, and AWS, while also applying modern tools like Docker, Jenkins, and JUnit to create scalable, secure, and efficient systems. I thrive in collaborative, Agile environments and have taken on leadership roles such as Scrum Master to drive team productivity and ensure timely delivery.</p>
@@ -59,6 +61,8 @@ function App() {
           <p>I’m excited to learn from professionals in the field and bring my enthusiasm for technology and continuous improvement to new challenges.</p>
           <p>Image slideshow w/ info</p>
         </div>
+        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='0px' marginRight='0px' marginBlock='2rem'/>
+
         <h1>Projects</h1>
         <p>Project slideshow with clickable images for more information</p>
         

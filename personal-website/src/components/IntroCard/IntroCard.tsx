@@ -14,7 +14,8 @@ const IntroCard = () => {
   if (width < 800) {
     return (
       <>
-        <div className='intro-card'>
+        <div className='intro-card' style={{justifyContent:'start'}}>
+            <img src={myImage} alt="me" style={{marginBlock :'10%',width:'70%',height:'auto', objectFit:'cover' ,border:"white 2px solid", borderRadius:'5%'}}/>
             <div className='intro-card-container'>
               <h1 className='intro'>Mateusz</h1>
               <h1 className='intro'>Kumkowski.</h1>
@@ -34,7 +35,7 @@ const IntroCard = () => {
     return (<Pagesplitter 
     leftSegment={
       <div className='intro-card'>
-        <img src={myImage} alt="me" style={{width:'50%',height:'auto', objectFit:'cover' ,border:"white 5px solid",borderRadius:'50%'}}/>
+        <img src={myImage} alt="me" style={{width:'60%',height:'auto', objectFit:'cover' ,border:"white 5px solid",borderRadius:'50%'}}/>
       </div>}
     rightSegment={
       <>
