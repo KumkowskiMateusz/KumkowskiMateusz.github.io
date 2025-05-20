@@ -1,11 +1,13 @@
-import React, { use } from 'react';
+import React from 'react';
 import NavbarSegment from './NavbarSegment/NavbarSegment';
 import './Navbar.scss';
 import useWindowDimensions from '../../customHooks/useWindowDimension';
+import Sidebar from './Sidebar/Sidebar';
 
 const Navbar: React.FC = () => {
 
     const {width} = useWindowDimensions();
+    const isMobile = width <= 768; // Adjust the breakpoint as needed
 React.useEffect(() => {
     const navbarHome = document.getElementById('navbar-segment-Home');
     const navbarAbout = document.getElementById('navbar-segment-About');
@@ -18,50 +20,60 @@ React.useEffect(() => {
         return;
     }
 
-    const handleHomeMouseOver = () => {
-        navbarBubble.style.transform = `translateX(0px)`;
-    };
-    const handleAboutMouseOver = () => {
-        navbarBubble.style.transform = `translateX(61px)`;
-    };
-    const handleProjectsMouseOver = () => {
-        navbarBubble.style.transform = `translateX(128px)`;
-    };
-    const handleGridMouseOut = () => {
-        navbarBubble.style.transform = `translateX(0px)`;
-    };
+    if (isMobile) {
+        return;
+    }
+    else{
+        const handleHomeMouseOver = () => {
+            navbarBubble.style.transform = `translateX(0px)`;
+        };
+        const handleAboutMouseOver = () => {
+            navbarBubble.style.transform = `translateX(61px)`;
+        };
+        const handleProjectsMouseOver = () => {
+            navbarBubble.style.transform = `translateX(128px)`;
+        };
+        const handleGridMouseOut = () => {
+            navbarBubble.style.transform = `translateX(0px)`;
+        };
 
-    navbarHome.addEventListener('mouseover', handleHomeMouseOver);
-    navbarAbout.addEventListener('mouseover', handleAboutMouseOver);
-    navbarProjects.addEventListener('mouseover', handleProjectsMouseOver);
-    navbarGrid.addEventListener('mouseleave', handleGridMouseOut);
+        navbarHome.addEventListener('mouseover', handleHomeMouseOver);
+        navbarAbout.addEventListener('mouseover', handleAboutMouseOver);
+        navbarProjects.addEventListener('mouseover', handleProjectsMouseOver);
+        navbarGrid.addEventListener('mouseleave', handleGridMouseOut);
 
-    return () => {
-        navbarHome.removeEventListener('mouseover', handleHomeMouseOver);
-        navbarAbout.removeEventListener('mouseover', handleAboutMouseOver);
-        navbarProjects.removeEventListener('mouseover', handleProjectsMouseOver);
-        navbarGrid.removeEventListener('mouseleave', handleGridMouseOut);
+        return () => {
+            navbarHome.removeEventListener('mouseover', handleHomeMouseOver);
+            navbarAbout.removeEventListener('mouseover', handleAboutMouseOver);
+            navbarProjects.removeEventListener('mouseover', handleProjectsMouseOver);
+            navbarGrid.removeEventListener('mouseleave', handleGridMouseOut);
+        }
     };
 }, [width]);
 
-    return (
-        <nav style={{display: 'flex', justifyContent: (width < 800 ? "center" : "space-between"), alignItems: 'center',paddingBlock:'1rem' ,paddingInline:'5rem'}}>
-            
-            {width < 800 ? <></> :  <div style={{ fontWeight: 'bold', fontSize: '1.5rem', textDecoration:'underline' }}>
-                Mateusz Kumkowski
-            </div>}
-    
-            <div id='navbar-grid'>
-                <ul style={{display: 'flex', listStyle: 'none', gap: '1.5rem', margin: 0, padding: 0}}>
-                    <NavbarSegment text="Home" hyperlink="#intro"/>
-                    <NavbarSegment text="About" hyperlink="#about-me"/>
-                    <NavbarSegment text="Projects" hyperlink="#projects"/>
-                </ul>
-                <div id='navbar-bubble'></div>
-            </div>
-            
-        </nav>
-    );
+    if(isMobile){
+        return(<Sidebar/>)
+    }
+    else{
+         return (
+            <nav style={{display: 'flex', justifyContent: (width < 800 ? "center" : "space-between"), alignItems: 'center',paddingBlock:'1rem' ,paddingInline:'5rem'}}>
+                
+                {width < 800 ? <></> :  <div style={{ fontWeight: 'bold', fontSize: '1.5rem', textDecoration:'underline' }}>
+                    Mateusz Kumkowski
+                </div>}
+        
+                <div id='navbar-grid'>
+                    <ul style={{display: 'flex', listStyle: 'none', gap: '1.5rem', margin: 0, padding: 0}}>
+                        <NavbarSegment text="Home" hyperlink="#intro"/>
+                        <NavbarSegment text="About" hyperlink="#about-me"/>
+                        <NavbarSegment text="Projects" hyperlink="#projects"/>
+                    </ul>
+                    <div id='navbar-bubble'></div>
+                </div>
+                
+            </nav>
+        );
+    }
 };
 
 export default Navbar;

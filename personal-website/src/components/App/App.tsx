@@ -6,9 +6,9 @@ import ProjectGrid from '../ProjectGrid/ProjectGrid';
 import Navbar from '../Navbar/Navbar';
 import TransitionLine from '../TransitionLine/TransitionLine';
 import AboutMe from '../AboutMe/AboutMe';
-import InformationTableHeader from '../InformationTable/InformationTableHeader/InformationTableHeader';
-import InformationTableHeaderSegment from '../InformationTable/InformationTableHeader/InformationTableHeaderSegment/InformationTableHeaderSegment';
 import InformationTable from '../InformationTable/InformationTable';
+import useWindowDimensions from '../../customHooks/useWindowDimension';
+import MobileAdditionalInfo from '../MobileAdditionalInfo/MobileAdditionalInfo';
 
 function App() {
 
@@ -39,7 +39,7 @@ function App() {
 
   const [_numberInput8, _setNumberInput8] = useState<number>(0);
   const [_numberInput9, _setNumberInput9] = useState<number>(0);
-  
+  let {width} = useWindowDimensions();
 
   return (
     <>
@@ -60,11 +60,9 @@ function App() {
         </div>
         <TransitionLine size='70%' thickness='5px' color='white' marginLeft='0px' marginRight='0px' marginBlock='2rem'/>
 
-        <h1>Projects</h1>
-        <p>Project slideshow with clickable images for more information</p>
-          <InformationTable></InformationTable>
+        {width > 800 ? <InformationTable/> : <MobileAdditionalInfo/>}
 
-          <h1>Skills</h1>
+        <h1>Projects</h1>
           <ProjectGrid/>
 
           <p>Interactive graph Segmenting between languages/libraries/frameworks/tools that shows years worked with tools</p>

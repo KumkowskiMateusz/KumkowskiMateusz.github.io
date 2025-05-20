@@ -1,0 +1,47 @@
+#menu_image{
+    margin: 1rem;
+    position: fixed;
+    width: 2.2em;
+    height: 2.2em;
+    cursor: pointer;
+    z-index: 1002;
+    transition: all 0.3s ease-in-out;
+}
+
+#sidebar_list{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    z-index: 1001;
+}
+
+.sidebar.hidden{
+    width:0;
+    overflow: hidden;
+    transition: all 0.1s ease-in-out;
+
+}
+
+.sidebar{
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    padding-top: 5rem;
+    background-color: rgb(30, 29, 41);
+    z-index: 1000;
+    justify-content: center;
+    opacity: 0.9;
+    backdrop-filter: blur(100px);
+}
+
+#menu_image.flipped{
+    transform: scale(1.1) scaleX(-1);
+    transition: all 0.1s ease-in-out;
+}
+

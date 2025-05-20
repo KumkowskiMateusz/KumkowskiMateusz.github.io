@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { use } from 'react';
 import './NavbarSegment.scss';
+import useWindowDimensions from '../../../customHooks/useWindowDimension';
 
 interface NavbarSegmentProps {
     text : string;
@@ -7,9 +8,13 @@ interface NavbarSegmentProps {
 }
 
 const NavbarSegment: React.FC<NavbarSegmentProps> = ({ text,hyperlink }) => {
-    return (
-        <li><a id={`navbar-segment-${text}`} className='navbar-segment' href={hyperlink} style={{ color: '#fff', textDecoration: 'none' }}>{text}</a></li>
-    );
+
+        
+          return(  
+            <li><a id={`navbar-segment-${text}`} className='navbar-segment' href={hyperlink} style={{ color: '#fff', textDecoration: 'none' }}>{text}</a></li>
+          )
+      
+    
 };
 
 export default NavbarSegment;
