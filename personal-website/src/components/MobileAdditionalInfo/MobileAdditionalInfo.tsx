@@ -4,17 +4,17 @@ import TransitionLine from '../TransitionLine/TransitionLine'
 const MobileAdditionalInfo = () => {
   return (
     <>
-        <TransitionLine></TransitionLine>
+        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='auto' marginRight='0px' marginBlock='2rem'/>
         <article id="career">
 
         </article>
-        <TransitionLine></TransitionLine>
+        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='0px' marginRight='0px' marginBlock='2rem'/>
         <article id="education">
         </article>
-        <TransitionLine></TransitionLine>
+        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='auto' marginRight='0px' marginBlock='2rem'/>
         <article id="skills">
         </article>
-        <TransitionLine></TransitionLine>
+        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='0px' marginRight='0px' marginBlock='2rem'/>
 
     </>
   )

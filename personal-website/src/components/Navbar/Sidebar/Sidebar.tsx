@@ -4,7 +4,7 @@ import MenuImage from '../../../assets/linksImages/MenuSymbol.svg'
 import SidebarSegment from './SidebarSegment/SidebarSegment';
 
 const Sidebar = () => {
-    const [isOpen, setIsOpen] = React.useState(false);
+    const [isOpen, setIsOpen] = React.useState(true);
     const handleMenuClick = () => {setIsOpen(isOpen === true ? false : true)};
 
   return (
@@ -14,9 +14,9 @@ const Sidebar = () => {
         </nav>
         <nav id='sidebar' className={`sidebar ${isOpen ? 'hidden' : ''}`} inert={isOpen}>
             <div id='sidebar_list'>
-                <SidebarSegment text='Home' hyperlink='#intro'/>
-                <SidebarSegment text='About' hyperlink='#about-me'/>
-                <SidebarSegment text='Projects' hyperlink='#projects'/>
+                <SidebarSegment text='Home' hyperlink='#intro' onClick={handleMenuClick}/>
+                <SidebarSegment text='About' hyperlink='#about-me' onClick={handleMenuClick}/>
+                <SidebarSegment text='Projects' hyperlink='#projects' onClick={handleMenuClick}/>
             </div>
         </nav>
     </>

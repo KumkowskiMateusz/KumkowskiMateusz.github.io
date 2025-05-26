@@ -9,6 +9,8 @@ import AboutMe from '../AboutMe/AboutMe';
 import InformationTable from '../InformationTable/InformationTable';
 import useWindowDimensions from '../../customHooks/useWindowDimension';
 import MobileAdditionalInfo from '../MobileAdditionalInfo/MobileAdditionalInfo';
+import ListHolder from '../ListHolder/ListHolder';
+import OracleCertImage from '../../assets/personalImages/OCAJSE8(1).jpg'
 
 function App() {
 
@@ -57,6 +59,14 @@ function App() {
         <TransitionLine size='70%' thickness='5px' color='white' marginLeft='auto' marginRight='0px' marginBlock='2rem'/>
         <div id='about-me' className='about-me'>
           <AboutMe/>
+          <ListHolder list={[
+            {
+              name: 'Oracle Certified Java SE 8 Developer',
+              description: 'Certification demonstrating expertise in the Java programming language and its core concepts.',
+              date: 'May 2025',
+              image: OracleCertImage
+            },
+          ]} type='Certification'/>
         </div>
         <TransitionLine size='70%' thickness='5px' color='white' marginLeft='0px' marginRight='0px' marginBlock='2rem'/>
 
