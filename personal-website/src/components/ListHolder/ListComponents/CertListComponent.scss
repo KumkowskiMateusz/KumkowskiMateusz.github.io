@@ -4,8 +4,9 @@
     width: 100%;
     padding: 1rem;
     grid-template-columns: 1fr 5fr;
+    margin-bottom: 1rem;
     gap: 2%;
-    border-bottom: white 1px solid;
+    border-left: white 1px solid;
 
     .cert-list-image{
         display: flex;

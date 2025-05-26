@@ -1,7 +1,6 @@
 .list-holder{
     display: flex;
+    width: 100%;
     flex-direction: column;
-    width: 80%;
-    min-height: min-content;
-    margin-inline: 10%;
+    height: min-content;
 }
