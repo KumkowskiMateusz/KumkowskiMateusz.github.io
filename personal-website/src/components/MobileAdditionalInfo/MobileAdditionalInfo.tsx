@@ -1,4 +1,3 @@
-import React from 'react'
 import TransitionLine from '../TransitionLine/TransitionLine'
 import ListHolder from '../ListHolder/ListHolder'
 import OracleCertImage from '../../assets/personalImages/OCAJSE8(1).jpg' // Update the path as needed

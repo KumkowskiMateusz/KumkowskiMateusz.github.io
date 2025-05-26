@@ -1,6 +1,5 @@
-import React, { use } from 'react';
+import React from 'react';
 import './NavbarSegment.scss';
-import useWindowDimensions from '../../../customHooks/useWindowDimension';
 
 interface NavbarSegmentProps {
     text : string;

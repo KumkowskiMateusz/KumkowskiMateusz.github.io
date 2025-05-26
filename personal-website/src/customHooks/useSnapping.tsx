@@ -18,7 +18,7 @@ const useSnapping = ({div_id,duration=10}:SnappingProps) => {
         const amountOfSlides = div_id.length - 1;
         
         
-        async function handleScroll(e : any){
+        async function handleScroll(_e : any){
             window.removeEventListener('scroll', handleScroll);
             console.log(slide)
             if (ScrollDirection === 'down' && slide < amountOfSlides) setSlide(slide + 1);

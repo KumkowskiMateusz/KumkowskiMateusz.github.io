@@ -1,6 +1,3 @@
-import React from 'react'
-
-
 import './InformationTable.scss'
 import InformationTableBody from './InformationTableBody/InformationTableBody';
 import InformationTableHeader from './InformationTableHeader/InformationTableHeader';

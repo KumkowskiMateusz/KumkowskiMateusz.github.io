@@ -9,8 +9,6 @@ import AboutMe from '../AboutMe/AboutMe';
 import InformationTable from '../InformationTable/InformationTable';
 import useWindowDimensions from '../../customHooks/useWindowDimension';
 import MobileAdditionalInfo from '../MobileAdditionalInfo/MobileAdditionalInfo';
-import ListHolder from '../ListHolder/ListHolder';
-import OracleCertImage from '../../assets/personalImages/OCAJSE8(1).jpg'
 
 function App() {
 
