@@ -60,7 +60,7 @@ function App() {
         </div>
         <TransitionLine size='70%' thickness='5px' color='white' marginLeft='0px' marginRight='0px' marginBlock='2rem'/>
 
-        {width > 800 ? <InformationTable/> : <MobileAdditionalInfo/>}
+        <MobileAdditionalInfo/>
 
         <h1>Projects</h1>
           <ProjectGrid/>

@@ -6,7 +6,6 @@ import './MobileAdditionalInfo.scss' // Assuming you have a CSS file for styling
 const MobileAdditionalInfo = () => {
   return (
     <>
-        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='auto' marginRight='0px' marginBlock='2rem'/>
         <article id="Career">
           <h1>Career</h1>
           <ListHolder list={[
@@ -24,7 +23,7 @@ const MobileAdditionalInfo = () => {
             }
           ]} type='Certification'/>
         </article>
-        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='0px' marginRight='0px' marginBlock='2rem'/>
+        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='auto' marginRight='0px' marginBlock='2rem'/>
         <article id="Certifications">
           <h1>Certifications</h1>
           <ListHolder list={[
@@ -36,12 +35,11 @@ const MobileAdditionalInfo = () => {
             }
           ]} type='Certification'/>
         </article>
-        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='auto' marginRight='0px' marginBlock='2rem'/>
+        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='0px' marginRight='0px' marginBlock='2rem'/>
         <article id="Technical Skills">
           <h1>Technical Skills</h1>
         </article>
-        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='0px' marginRight='0px' marginBlock='2rem'/>
-
+        <TransitionLine size='70%' thickness='5px' color='white' marginLeft='auto' marginRight='0px' marginBlock='2rem'/>
     </>
   )
 }
