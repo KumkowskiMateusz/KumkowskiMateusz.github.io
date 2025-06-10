@@ -39,7 +39,6 @@ function App() {
 
   const [_numberInput8, _setNumberInput8] = useState<number>(0);
   const [_numberInput9, _setNumberInput9] = useState<number>(0);
-  let {width} = useWindowDimensions();
 
   return (
     <>
@@ -63,9 +62,8 @@ function App() {
         <MobileAdditionalInfo/>
 
         <h1>Projects</h1>
-          <ProjectGrid/>
+          
 
-          <p>Interactive graph Segmenting between languages/libraries/frameworks/tools that shows years worked with tools</p>
       </main>
     </>
   )
