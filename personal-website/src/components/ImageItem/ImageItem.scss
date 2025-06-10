@@ -1,0 +1,14 @@
+.image-item{
+    display: grid;
+    grid-template-columns : 20px 100px;
+    column-gap: 5px;
+    max-height: 20px;
+    margin-block: 5px;
+    width: min-content;
+
+    .image-item-image{
+        columns: 1;
+        aspect-ratio: 1 / 1;
+        object-fit:scale-down;
+    }
+}

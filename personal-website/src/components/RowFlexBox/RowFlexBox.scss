@@ -1,0 +1,25 @@
+.row-flex-container{
+    height: 100%;
+}
+
+.row-flex-box{
+    margin-inline:auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+
+    * {
+        margin-inline:5px;
+        border-radius: 10px;
+        width: 100%;
+        flex-grow: 1;
+    }
+
+}
+
+.row-flex-text{
+    margin-bottom: 10px;
+}
