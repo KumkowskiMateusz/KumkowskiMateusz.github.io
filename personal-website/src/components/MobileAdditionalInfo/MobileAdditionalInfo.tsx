@@ -9,20 +9,20 @@ import ImageItem from '../ImageItem/ImageItem';
 
 const MobileAdditionalInfo = () => {
   let l = [
-  <RowFlexBox title='Languages' items={[
+  <RowFlexBox title='FrontEnd Tools' items={[
       <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
       <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
       <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
       <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
       <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />]}
     />,
-    <RowFlexBox title='Languages' items={[
+    <RowFlexBox title='BackEnd Tools' items={[
       <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
       <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
       <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
       <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />]}
     />,
-    <RowFlexBox title='Languages' items={[
+    <RowFlexBox title='DevOp Tools' items={[
       <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
       <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
       <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
@@ -49,6 +49,12 @@ const MobileAdditionalInfo = () => {
           <ColumnFlexBox items={l}></ColumnFlexBox>
         </article>
         <TransitionLine size='70%' thickness='5px' color='white' marginLeft='auto' marginRight='0px' marginBlock='2rem'/>
+         <article id="Projects">
+          <h1>Projects</h1>
+          <ColumnFlexBox items={[]}></ColumnFlexBox>
+          <br></br>
+          <br></br>
+        </article>
     </>
   )
 }
