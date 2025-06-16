@@ -1,3 +1,19 @@
+#long-nav{
+    z-index: 1000;
+    top:0;
+    position:fixed;
+    padding-inline: 5%;
+    padding-block: 1rem;
+    width: 90%;
+    background-color: rgb(61, 61, 61, 0.3);
+    border-bottom: 2px solid rgba(153, 153, 153, 0.678);
+    backdrop-filter: blur(10px);
+}
+
+#home-button{
+    color: white;
+}
+
 #navbar-grid{
     display: grid;
     gap: 0px;
@@ -13,6 +29,6 @@
     height: 5px;
     grid-row:2;
     transition: all 0.1s ease-in-out;
-    left:16px;
+    left:15px;
     padding-block: 1px;
 }

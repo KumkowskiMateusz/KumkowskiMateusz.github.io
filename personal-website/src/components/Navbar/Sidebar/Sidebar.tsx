@@ -17,6 +17,8 @@ const Sidebar = () => {
                 <SidebarSegment text='Home' hyperlink='#intro' onClick={handleMenuClick}/>
                 <SidebarSegment text='About' hyperlink='#about-me' onClick={handleMenuClick}/>
                 <SidebarSegment text='Projects' hyperlink='#projects' onClick={handleMenuClick}/>
+                <SidebarSegment text='Certifications' hyperlink='#certifications' onClick={handleMenuClick}/>
+                <SidebarSegment text='Skills' hyperlink='#skills' onClick={handleMenuClick}/>
             </div>
         </nav>
     </>

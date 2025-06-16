@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
     const {width} = useWindowDimensions();
     const isMobile = width <= 768; // Adjust the breakpoint as needed
 React.useEffect(() => {
-    const navbarHome = document.getElementById('navbar-segment-Home');
+    const navbarHome = document.getElementById('navbar-segment-Intro');
     const navbarAbout = document.getElementById('navbar-segment-About');
     const navbarProjects = document.getElementById('navbar-segment-Projects');
     const navbarCertifications = document.getElementById('navbar-segment-Certifications');
@@ -30,18 +30,18 @@ React.useEffect(() => {
             navbarBubble.style.transform = `translateX(0px)`;
         };
         const handleAboutMouseOver = () => {
-            navbarBubble.style.transform = `translateX(61px)`;
+            navbarBubble.style.transform = `translateX(59px)`;
         };
         const handleCertsMouseOver = () => {
-            navbarBubble.style.transform = `translateX(145px)`;
+            navbarBubble.style.transform = `translateX(142px)`;
         };
 
         const handleSkillsMouseOver = () => {
-            navbarBubble.style.transform = `translateX(230px)`;
+            navbarBubble.style.transform = `translateX(227px)`;
         };
 
         const handleProjectsMouseOver = () => {
-            navbarBubble.style.transform = `translateX(300px)`;
+            navbarBubble.style.transform = `translateX(293px)`;
         };
 
         const handleGridMouseOut = () => {
@@ -53,7 +53,6 @@ React.useEffect(() => {
         navbarProjects.addEventListener('mouseover', handleProjectsMouseOver);
         navbarCertifications.addEventListener('mouseover', handleCertsMouseOver);
         navbarSkills.addEventListener('mouseover', handleSkillsMouseOver);
-
         navbarGrid.addEventListener('mouseleave', handleGridMouseOut);
         
 
@@ -73,15 +72,15 @@ React.useEffect(() => {
     }
     else{
          return (
-            <nav style={{display: 'flex', justifyContent: (width < 800 ? "center" : "space-between"), alignItems: 'center',paddingBlock:'1rem' ,paddingInline:'5rem'}}>
+            <nav id='long-nav' style={{display: 'flex', justifyContent: (width < 800 ? "center" : "space-between"), alignItems: 'center'}}>
                 
                 {width < 800 ? <></> :  <div style={{ fontWeight: 'bold', fontSize: '1.5rem', textDecoration:'underline' }}>
-                    Mateusz Kumkowski
+                    <a id='home-button' href=''>Mateusz Kumkowski</a>
                 </div>}
         
                 <div id='navbar-grid'>
                     <ul style={{display: 'flex', listStyle: 'none', gap: '1.5rem', margin: 0, padding: 0}}>
-                        <NavbarSegment text="Home" hyperlink="#intro"/>
+                        <NavbarSegment text="Intro" hyperlink="#intro"/>
                         <NavbarSegment text="About" hyperlink="#about-me"/>
                         <NavbarSegment text="Certifications" hyperlink="#Certifications"/>
                         <NavbarSegment text="Skills" hyperlink="#Skills"/>
