@@ -1,4 +1,4 @@
-import OracleCertImage from '../../assets/personalImages/OCAJSE8(1).jpg' // Update the path as needed
+import OracleCertImage from '../../assets/personalImages/OCAJSE8(1).png' // Update the path as needed
 
 var c = [
             {

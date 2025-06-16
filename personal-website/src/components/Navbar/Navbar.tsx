@@ -12,10 +12,12 @@ React.useEffect(() => {
     const navbarHome = document.getElementById('navbar-segment-Home');
     const navbarAbout = document.getElementById('navbar-segment-About');
     const navbarProjects = document.getElementById('navbar-segment-Projects');
+    const navbarCertifications = document.getElementById('navbar-segment-Certifications');
+    const navbarSkills = document.getElementById('navbar-segment-Skills');
     const navbarBubble = document.getElementById('navbar-bubble');
     const navbarGrid = document.getElementById('navbar-grid');
 
-    if (navbarHome === null || navbarAbout === null || navbarProjects === null || navbarBubble === null || navbarGrid === null) {
+    if (navbarHome === null || navbarAbout === null || navbarProjects === null || navbarBubble === null || navbarGrid === null || navbarCertifications === null || navbarSkills === null) {
         console.error('Navbar elements not found');
         return;
     }
@@ -30,9 +32,18 @@ React.useEffect(() => {
         const handleAboutMouseOver = () => {
             navbarBubble.style.transform = `translateX(61px)`;
         };
-        const handleProjectsMouseOver = () => {
-            navbarBubble.style.transform = `translateX(128px)`;
+        const handleCertsMouseOver = () => {
+            navbarBubble.style.transform = `translateX(145px)`;
         };
+
+        const handleSkillsMouseOver = () => {
+            navbarBubble.style.transform = `translateX(230px)`;
+        };
+
+        const handleProjectsMouseOver = () => {
+            navbarBubble.style.transform = `translateX(300px)`;
+        };
+
         const handleGridMouseOut = () => {
             navbarBubble.style.transform = `translateX(0px)`;
         };
@@ -40,12 +51,18 @@ React.useEffect(() => {
         navbarHome.addEventListener('mouseover', handleHomeMouseOver);
         navbarAbout.addEventListener('mouseover', handleAboutMouseOver);
         navbarProjects.addEventListener('mouseover', handleProjectsMouseOver);
+        navbarCertifications.addEventListener('mouseover', handleCertsMouseOver);
+        navbarSkills.addEventListener('mouseover', handleSkillsMouseOver);
+
         navbarGrid.addEventListener('mouseleave', handleGridMouseOut);
+        
 
         return () => {
             navbarHome.removeEventListener('mouseover', handleHomeMouseOver);
             navbarAbout.removeEventListener('mouseover', handleAboutMouseOver);
             navbarProjects.removeEventListener('mouseover', handleProjectsMouseOver);
+            navbarProjects.removeEventListener('mouseover', handleCertsMouseOver);
+            navbarProjects.removeEventListener('mouseover', handleSkillsMouseOver);
             navbarGrid.removeEventListener('mouseleave', handleGridMouseOut);
         }
     };
@@ -66,7 +83,9 @@ React.useEffect(() => {
                     <ul style={{display: 'flex', listStyle: 'none', gap: '1.5rem', margin: 0, padding: 0}}>
                         <NavbarSegment text="Home" hyperlink="#intro"/>
                         <NavbarSegment text="About" hyperlink="#about-me"/>
-                        <NavbarSegment text="Projects" hyperlink="#projects"/>
+                        <NavbarSegment text="Certifications" hyperlink="#Certifications"/>
+                        <NavbarSegment text="Skills" hyperlink="#Skills"/>
+                        <NavbarSegment text="Projects" hyperlink="#Projects"/>
                     </ul>
                     <div id='navbar-bubble'></div>
                 </div>

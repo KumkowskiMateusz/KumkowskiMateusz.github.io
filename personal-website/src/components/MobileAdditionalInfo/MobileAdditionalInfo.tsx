@@ -44,7 +44,7 @@ const MobileAdditionalInfo = () => {
           <ListHolder list={CertList} type='Certification'/>
         </article>
         <TransitionLine size='70%' thickness='5px' color='white' marginLeft='0px' marginRight='0px' marginBlock='2rem'/>
-        <article id="Technical Skills">
+        <article id="Skills">
           <h1>Technical Skills</h1>
           <ColumnFlexBox items={l}></ColumnFlexBox>
         </article>
