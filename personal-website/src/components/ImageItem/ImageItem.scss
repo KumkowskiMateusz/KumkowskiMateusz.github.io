@@ -2,9 +2,13 @@
     display: grid;
     grid-template-columns : 20px 100px;
     column-gap: 5px;
-    max-height: 20px;
     margin-block: 5px;
-    width: min-content;
+    width: 100%;
+    overflow: hidden;
+
+    .image-item-text{
+        width: max-content;
+    }
 
     .image-item-image{
         columns: 1;

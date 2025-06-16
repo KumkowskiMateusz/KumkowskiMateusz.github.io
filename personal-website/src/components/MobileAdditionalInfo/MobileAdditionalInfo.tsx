@@ -4,33 +4,10 @@ import './MobileAdditionalInfo.scss' // Assuming you have a CSS file for styling
 import CareerList from './CareerList'; // Assuming you have a CareerList component for rendering career items
 import CertList from './CertList'
 import ColumnFlexBox from '../ColumnFlexBox/ColumnFlexBox';
-import RowFlexBox from '../RowFlexBox/RowFlexBox';
-import ImageItem from '../ImageItem/ImageItem';
+import l from './SkillsList'; // Assuming you have a SkillsList component for rendering skills
 
 const MobileAdditionalInfo = () => {
-  let l = [
-  <RowFlexBox title='FrontEnd Tools' items={[
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />]}
-    />,
-    <RowFlexBox title='BackEnd Tools' items={[
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />]}
-    />,
-    <RowFlexBox title='DevOp Tools' items={[
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />,
-      <ImageItem text='English' imageUrl='https://cdn-icons-png.flaticon.com/512/197/197484.png' />]}
-    />
-]
+  
 
   return (
     <>
