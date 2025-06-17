@@ -1,44 +1,43 @@
-import useWindowDimensions from '../../customHooks/useWindowDimension';
-import githubLogo from '../../assets/linksImages/github-image.png'
+import { useNavigate } from 'react-router-dom';
 import defaultImage from '../../assets/project-images/default-project-image.png'
-import CardComponent from '../Card/CardComponent';
-import './ProjectCard.css'
+import './ProjectCard.scss'
+
 
 interface ProjectCardProps {
     _name: string;
-    _description: string;
-    _technologies: string[];
-    _date: string;
+    _description?: string;
+    _technologies?: string[];
+    _date?: string;
     _repo ?: string;
     _link ?: string;
     _image ?: string;
 }    
 
-const ProjectCard = ({_name,_description,_technologies=[],_date,_repo="www.google.com",_link="www.google.com",_image=defaultImage}:ProjectCardProps) => {
+const ProjectCard = ({_name,_technologies=[],_date,_link="",_image=defaultImage}:ProjectCardProps) => {
   
-    let {width,height} = useWindowDimensions();
-    width = Math.round(width/2);
-    height = Math.round(height/2);
-    _link = _link || "https://www.google.com";
+   
+    _link = _link || "";
     _image = _image || defaultImage;
+    const navigate = useNavigate();
 
 
-    return <CardComponent content={
-    <div 
-        className= {`${width >= height ? "project-card-horizontal" : "project-card-vertical"}`} 
-        key={_name} 
-        style={{ width: `${width}px`, height: `${height}px` }}>
+    return <div className="project-card" key={_name}  onClick={() => {navigate(_link)}}>
         
-        <img src={_image} alt='project-image' className='project-image'/>
-        <h1 className='project-name'>{_name}</h1>
-        <h2 className='project-description'>{_description}</h2>
-        <h3 className='project-technologies'>{_technologies.join(", ")}</h3>
-        <h3 className='project-date'>{_date}</h3>
-        <a className='project-repo-link' rel={'external'} target="_blank" href={`https://${_repo}`}>{<img src={githubLogo}  width={"20px"} height={"20px"}></img>}</a>
+        <div className='project-card-image' style={{backgroundImage: `url(${_image})`}}>
+            <img src={_image} alt={`${_name} project`} />
+        </div>
 
+        <div className='project-card-hidden-content'>
+            <h3 className='project-date'>{_date}</h3>
+        </div>
 
+        <div className='project-card-content'>
+            <h1 className='project-name'>{_name}</h1>
+            <h3 className='project-technologies'>{_technologies.join(", ")}</h3>
+        </div>
+       
     </div>
-    }/>
+
     
 
 

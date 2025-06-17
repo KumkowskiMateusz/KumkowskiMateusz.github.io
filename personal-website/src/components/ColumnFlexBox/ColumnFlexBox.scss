@@ -1,3 +1,4 @@
+
 .column-flex-box{
     margin-inline:auto;
     background-color: #090813b0;
@@ -12,6 +13,11 @@
     
     min-height: 60dvh;
     height: fit-content;
+
+    .project{
+        flex-grow: 0;
+        border-left: 0;
+    }
 
     * {
         margin:0;

@@ -5,6 +5,7 @@ import CareerList from './CareerList'; // Assuming you have a CareerList compone
 import CertList from './CertList'
 import ColumnFlexBox from '../ColumnFlexBox/ColumnFlexBox';
 import l from './SkillsList'; // Assuming you have a SkillsList component for rendering skills
+import projects from './ProjectList'; // Assuming you have a ProjectList component for rendering projects
 
 const MobileAdditionalInfo = () => {
   
@@ -28,7 +29,7 @@ const MobileAdditionalInfo = () => {
         <TransitionLine size='70%' thickness='5px' color='white' marginLeft='auto' marginRight='0px' marginBlock='2rem'/>
          <article id="Projects">
           <h1>Projects</h1>
-          <ColumnFlexBox items={[]}></ColumnFlexBox>
+          <ColumnFlexBox option="project" items={projects}></ColumnFlexBox>
           <br></br>
           <br></br>
         </article>
