@@ -12,7 +12,7 @@ const projects = [
         _image: color
     },
     {
-        _name: "Project 1",
+        _name: "Project 2",
         _description: "This is a description of Project 1.",
         _technologies: ["React", "TypeScript", "CSS"],
         _date: "2023-01-01",
@@ -21,7 +21,7 @@ const projects = [
         _image: color
     },
     {
-        _name: "Project 1",
+        _name: "Project 3",
         _description: "This is a description of Project 1.",
         _technologies: ["React", "TypeScript", "CSS"],
         _date: "2023-01-01",
@@ -30,7 +30,7 @@ const projects = [
         _image: color
     },
     {
-        _name: "Project 1",
+        _name: "Project 4",
         _description: "This is a description of Project 1.",
         _technologies: ["React", "TypeScript", "CSS"],
         _date: "2023-01-01",
