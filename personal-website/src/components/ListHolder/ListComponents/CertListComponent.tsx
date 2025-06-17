@@ -13,7 +13,7 @@ const CertListComponent : React.FC<CertListComponentProps> = ({id,title,desc,ima
   return (
     <div className="cert-list-segment" key={id}>
       <div className="cert-list-image">
-        <img src={image} alt={title} />
+        <img loading='lazy' src={image} alt={title} />
       </div>
       <div className="cert-list-content">
         <div className = 'cert-list-header'>

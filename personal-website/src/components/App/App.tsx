@@ -2,12 +2,9 @@ import './App.scss'
 import BubbleBackground from '../bubbleBackground/BubbleBackground'
 import IntroCard from '../IntroCard/IntroCard'
 import { useState } from 'react';
-import ProjectGrid from '../ProjectGrid/ProjectGrid';
 import Navbar from '../Navbar/Navbar';
 import TransitionLine from '../TransitionLine/TransitionLine';
 import AboutMe from '../AboutMe/AboutMe';
-import InformationTable from '../InformationTable/InformationTable';
-import useWindowDimensions from '../../customHooks/useWindowDimension';
 import MobileAdditionalInfo from '../MobileAdditionalInfo/MobileAdditionalInfo';
 
 function App() {

@@ -6,6 +6,7 @@
     border: white 1px solid;
     border-radius: 20px;
     margin: 10px;
+    will-change: transform, opacity;
 
     .project-card-image{
         position: absolute;
@@ -19,21 +20,19 @@
             transform: scale(1.25);
         }
         border-radius: 20px;
-        object-fit: stretch;
+        object-fit: cover;
         z-index: -1;
+        will-change: transform, opacity;
     }
     
 .project-card-content{
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    align-items: start;
     mix-blend-mode: none;
     padding: 1rem;
     color: white;
     z-index: 1;
+    will-change: transform;
 }
 
 .project-card-hidden-content{

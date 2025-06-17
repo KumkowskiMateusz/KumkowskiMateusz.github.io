@@ -10,7 +10,7 @@ interface ImageItemProps {
 const ImageItem : React.FC<ImageItemProps> = ({text,imageUrl}) => {
   return (
     <div className='image-item'>
-        <img src={imageUrl} alt={text} className='image-item-image' />
+        <img loading='lazy' src={imageUrl} alt={text} className='image-item-image' />
         <p className='image-item-text'>{text}</p>
     
     </div>

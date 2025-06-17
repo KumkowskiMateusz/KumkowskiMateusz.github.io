@@ -4,8 +4,9 @@ import './MobileAdditionalInfo.scss' // Assuming you have a CSS file for styling
 import CareerList from './CareerList'; // Assuming you have a CareerList component for rendering career items
 import CertList from './CertList'
 import ColumnFlexBox from '../ColumnFlexBox/ColumnFlexBox';
-import l from './SkillsList'; // Assuming you have a SkillsList component for rendering skills
-import projects from './ProjectList'; // Assuming you have a ProjectList component for rendering projects
+import skills from './SkillsList'; // Assuming you have a SkillsList component for rendering skills
+import projects from './ProjectList.ts'; // Assuming you have a ProjectList component for rendering projects
+import ProjectsFlexBox from '../ProjectsFlexBox/ProjectsFlexBox';
 
 const MobileAdditionalInfo = () => {
   
@@ -24,12 +25,12 @@ const MobileAdditionalInfo = () => {
         <TransitionLine size='70%' thickness='5px' color='white' marginLeft='0px' marginRight='0px' marginBlock='2rem'/>
         <article id="Skills">
           <h1>Technical Skills</h1>
-          <ColumnFlexBox items={l}></ColumnFlexBox>
+          <ColumnFlexBox items={skills}></ColumnFlexBox>
         </article>
         <TransitionLine size='70%' thickness='5px' color='white' marginLeft='auto' marginRight='0px' marginBlock='2rem'/>
          <article id="Projects">
           <h1>Projects</h1>
-          <ColumnFlexBox option="project" items={projects}></ColumnFlexBox>
+          <ProjectsFlexBox items={projects}></ProjectsFlexBox>
           <br></br>
           <br></br>
         </article>

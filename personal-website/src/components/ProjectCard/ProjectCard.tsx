@@ -24,7 +24,7 @@ const ProjectCard = ({_name,_technologies=[],_date,_link="",_image=defaultImage}
     return <div className="project-card" key={_name}  onClick={() => {navigate(_link)}}>
         
         <div className='project-card-image' style={{backgroundImage: `url(${_image})`}}>
-            <img src={_image} alt={`${_name} project`} />
+            <img loading='lazy' src={_image} alt={`${_name} project`} />
         </div>
 
         <div className='project-card-hidden-content'>
