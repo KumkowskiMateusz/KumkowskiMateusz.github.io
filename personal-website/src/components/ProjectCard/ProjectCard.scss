@@ -1,26 +1,28 @@
 .project-card{
-    width: 30vw;
-    height: 30dvh;
+    width: max(35vw,30vh);
+    height: 35dvh;
     z-index: -10;
-    transition: all 0.1s linear;
+    transition: all 0.3s linear;
     border: white 1px solid;
     border-radius: 20px;
     margin: 10px;
-    will-change: transform, opacity;
-
+    will-change:  box-shadow;
     .project-card-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
         overflow: hidden;
-        width: 30vw;
-        height: 30dvh;
+        width: max(35vw,30vh);
+        height: 35dvh;
         img{
             position: absolute;
-            width: 30vw;
-            height: 30dvh;
-            transform: scale(1.25);
+            min-width: max(35vw,30vh);
+            min-height: 35vh;
+            transform: scale(1.1);
         }
         border-radius: 20px;
-        object-fit: cover;
+        object-fit: scale-down;
         z-index: -1;
         will-change: transform, opacity;
     }
@@ -40,8 +42,8 @@
     display: flex;
     border-radius: 20px;
     opacity: 0;
-    width: 30vw;
-    height: 30dvh;
+    width: max(35vw,30vh);
+    height: 35dvh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -60,7 +62,6 @@
 
 .project-card:hover {
     cursor: pointer;
-    transform: scale(1.02);
     box-shadow: rgba(255, 255, 255, 0.555) 0px 0px 20px 1px;
 
     .project-card-hidden-content {

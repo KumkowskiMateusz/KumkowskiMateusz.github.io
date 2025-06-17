@@ -31,16 +31,21 @@
         display: grid;
         grid-template-columns: 2fr max-content;
         
+        .date{
+            font-style: italic;
+            color: rgb(168, 168, 168);
+        }
 
         .cert-list-header{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: start;
+            grid-column: 1 / 3;
         }
 
         p{
-            font-size: min(1rem,2vw);
+            font-size: min(1.5rem,2.5vw);
             margin: 0;
             padding: 0;
         }

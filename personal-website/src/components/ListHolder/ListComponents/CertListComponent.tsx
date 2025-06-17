@@ -20,7 +20,7 @@ const CertListComponent : React.FC<CertListComponentProps> = ({id,title,desc,ima
           <h3>{title}</h3>
           <p>{desc}</p>
         </div>
-        <p>{date}</p>
+        <p className='date'>{date}</p>
       </div>
     </div>
   )

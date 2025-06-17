@@ -33,11 +33,6 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
     
 
     const createBubble = async () => {
-        if(width < 800){
-            MaxBubbleSize /=  100;
-            MinBubbleSize /= 100;
-            console.log("Width is less than 800px, adjusting bubble size and creation interval.");
-        }
 
         let randomSize: number = Math.floor(Math.random() * (MaxBubbleSize - MinBubbleSize)) + MinBubbleSize;
         const randomSpeed : number = Math.ceil(Math.random() * (MaxBubbleSpeed - MinBubbleSpeed)) + MinBubbleSpeed;
@@ -88,7 +83,8 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
 
     useEffect(() => {
         if(width < 800){
-            bubbleCreationInterval *= 10;
+            bubbleCreationInterval *= 1.2;
+            
         }
         setInterval(() => {createBubble();}, bubbleCreationInterval);
     },[]);
