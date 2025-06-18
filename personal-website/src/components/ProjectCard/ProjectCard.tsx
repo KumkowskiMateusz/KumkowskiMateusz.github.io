@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import defaultImage from '../../assets/project-images/default-project-image.png'
 import './ProjectCard.scss'
@@ -13,13 +14,14 @@ interface ProjectCardProps {
     _image ?: string;
 }    
 
-const ProjectCard = ({_name,_technologies=[],_date,_link="",_image=defaultImage}:ProjectCardProps) => {
-  
-   
-    _link = _link || "";
-    _image = _image || defaultImage;
+const ProjectCard: React.FC<ProjectCardProps> = React.memo(({
+    _name,
+    _technologies = [],
+    _date,
+    _link = "",
+    _image = defaultImage
+}) => {
     const navigate = useNavigate();
-
 
     return <div className="project-card" key={_name}  onClick={() => {navigate(_link)}}>
         
@@ -37,10 +39,6 @@ const ProjectCard = ({_name,_technologies=[],_date,_link="",_image=defaultImage}
         </div>
        
     </div>
-
-    
-
-
-}
+});
 
 export default ProjectCard

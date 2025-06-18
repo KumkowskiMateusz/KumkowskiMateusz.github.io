@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import ProjectCard from '../ProjectCard/ProjectCard';
 import useWindowDimensions from '../../customHooks/useWindowDimension';
 
@@ -20,49 +20,27 @@ const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({items}) => {
 
   const [projectIndex, setProjectIndex] = useState(0);
   const {width} = useWindowDimensions();
-  const [projects, setProjects] = useState(items);
 
-  const updateProjects = (direction : number) => {
+  const projectsPerPage = width < 800 ? 2 : 4;
+  const maxIndex = Math.max(0, items.length - projectsPerPage);
 
-    if (width < 800) {
-      const newIndex = projectIndex + (direction * 2);
-      if (newIndex < 0 || newIndex >= items.length) {
-        return; // Prevent going out of bounds
-      }
-      setProjectIndex(newIndex);
-      const newProjects = items.slice(newIndex, newIndex + 2);
-      setProjects(newProjects); // Show only 2 projects on small screens
-    } 
-    
-    else{
-      const newIndex = projectIndex + (direction * 4);
-      setProjectIndex(newIndex);
-      if(newIndex < 0 || newIndex >= items.length) {
-        return; // Prevent going out of bounds
-      }
-      const newProjects = items.slice(newIndex, newIndex + 4);
-      setProjects(newProjects); // Show only 4 projects on medium screens
-  }
-}
+  const visibleProjects = useMemo(
+    () => items.slice(projectIndex, projectIndex + projectsPerPage),
+    [items, projectIndex, projectsPerPage]
+  );
 
-  useEffect(()=>{
-    if(width < 800) {
-      setProjects(items.slice(0, 2)); // Show only 2 projects on small screens
-    }
-    else {
-      setProjects(items.slice(0, 4)); // Show only 4 projects on medium screens
-    }
-  },[width])
+  const handlePrev = () => setProjectIndex(i => Math.max(0, i - projectsPerPage));
+  const handleNext = () => setProjectIndex(i => Math.min(maxIndex, i + projectsPerPage));
 
   return (
     <div className='column-flex-box'>
-      <button onClick={() => updateProjects(-1)} className='project-button left-button'>Previous Projects</button>
-       {projects.map((proj :any, i) => (
+      <button onClick={handlePrev} disabled={projectIndex === 0} className='project-button left-button'>Previous Projects</button>
+       {visibleProjects.map((proj :any, i) => (
             <div className="column-flex-item project" key={proj._name + i}>
                 <ProjectCard {...proj} />
             </div>
         ))}
-        <button onClick={() => updateProjects(1)} className='project-button right-button'>Next Projects</button>
+        <button onClick={handleNext} disabled={projectIndex >= maxIndex} className='project-button right-button'>Next Projects</button>
     </div>
   )
 }

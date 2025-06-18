@@ -6,7 +6,7 @@
     border: white 1px solid;
     border-radius: 20px;
     margin: 10px;
-    will-change:  box-shadow;
+    
     .project-card-image{
         display: flex;
         justify-content: center;
@@ -62,7 +62,6 @@
 
 .project-card:hover {
     cursor: pointer;
-    box-shadow: rgba(255, 255, 255, 0.555) 0px 0px 20px 1px;
 
     .project-card-hidden-content {
         opacity: 1;
