@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import ProjectCard from '../ProjectCard/ProjectCard';
 import useWindowDimensions from '../../customHooks/useWindowDimension';
+import './ProjectsFlexBox.scss'
 
 interface ProjectCardProps {
     _name: string;
@@ -33,15 +34,17 @@ const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({items}) => {
   const handleNext = () => setProjectIndex(i => Math.min(maxIndex, i + projectsPerPage));
 
   return (
-    <div className='column-flex-box'>
-      <button onClick={handlePrev} disabled={projectIndex === 0} className='project-button left-button'>Previous Projects</button>
+    <>
+    <button onClick={handlePrev} disabled={projectIndex === 0} className='project-button left-button'>Previous Projects</button>
+    <div className='projects-flex-box'>
        {visibleProjects.map((proj :any, i) => (
-            <div className="column-flex-item project" key={proj._name + i}>
-                <ProjectCard {...proj} />
-            </div>
+          <div>
+            <ProjectCard key={i} {...proj} />
+          </div>
         ))}
-        <button onClick={handleNext} disabled={projectIndex >= maxIndex} className='project-button right-button'>Next Projects</button>
     </div>
+     <button onClick={handleNext} disabled={projectIndex >= maxIndex} className='project-button right-button'>Next Projects</button>
+    </>
   )
 }
 

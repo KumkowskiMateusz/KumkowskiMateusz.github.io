@@ -1,23 +1,21 @@
 .project-card{
-    width: max(35vw,30vh);
+    width: max(32vw,30vh);
     height: 35dvh;
     z-index: -10;
     transition: all 0.3s linear;
     border: white 1px solid;
-    border-radius: 20px;
-    margin: 10px;
-    
+    border-radius: 20px;    
     .project-card-image{
         display: flex;
         justify-content: center;
         align-items: center;
         position: absolute;
         overflow: hidden;
-        width: max(35vw,30vh);
+        width: max(32vw,30vh);
         height: 35dvh;
         img{
             position: absolute;
-            min-width: max(35vw,30vh);
+            min-width: max(32vw,30vh);
             min-height: 35vh;
             transform: scale(1.1);
         }
@@ -42,7 +40,7 @@
     display: flex;
     border-radius: 20px;
     opacity: 0;
-    width: max(35vw,30vh);
+    width: max(32vw,30vh);
     height: 35dvh;
     flex-direction: column;
     justify-content: center;
