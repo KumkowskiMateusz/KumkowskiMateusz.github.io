@@ -1,4 +1,26 @@
+.projects-flex-box-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+    margin-block: 20px;
+    height: 50vh;
+    /* For exponential scaling, use a power function with calc and vw */
+    /* Example: height increases faster as vw increases, but capped */
+    /* height: min(1200px, max(500px, calc(500px * pow(1.015, (100 * (100vw / 1920)))))); */
+    /* CSS doesn't support pow(), so use clamp for practical purposes */
+    overflow: hidden;
+
+    button{
+        z-index: 2;
+        align-self: center;
+    }
+
+}
+
 .projects-flex-box{
+    position: absolute;
     margin-inline:auto;
     display: flex;
     flex-direction: row;
@@ -7,7 +29,9 @@
     padding: 10px;
     gap: 20px;
     height: fit-content;
-    width: 90%;
-    justify-content: space-around;
-    z-index: -1;
+    width: 80vw;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+    will-change: transform, opacity;
 }
