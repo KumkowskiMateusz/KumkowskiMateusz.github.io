@@ -37,7 +37,18 @@ const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({ items }) => {
   };
   const handleNext = () => {
     setDirection(1);
-    setProjectIndex(i => Math.min(maxIndex + 1, i + projectsPerPage));
+    setProjectIndex(i => Math.min(maxIndex, i + projectsPerPage));
+  };
+
+  const handleDragEnd = (
+    _event: MouseEvent | TouchEvent | PointerEvent,
+    info: { offset: { x: number; y: number } }
+  ) => {
+    if (info.offset.x < -100 && projectIndex < maxIndex) {
+      handleNext();
+    } else if (info.offset.x > 100 && projectIndex > 0) {
+      handlePrev();
+    }
   };
 
   return (
@@ -45,25 +56,27 @@ const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({ items }) => {
       <button onClick={handlePrev} disabled={projectIndex === 0} className='project-button left-button'>
         {/* <img src="/assets/left-arrow.svg" alt="Previous" style={{ width: 20, height: 20 }} /> */}
       </button>
-        <AnimatePresence  custom={direction}>
-          <motion.div
-            key={projectIndex}
-            custom={direction}
-            initial={{ x: direction > 0 ? '-100%' : '100%', opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: direction > 0 ? '100%' : '-100%', opacity: 0 , transitionEnd: { display: 'none' }}}
-            transition={{ type: 'tween', duration: 0.5 }}
-            className='projects-flex-box'
-          >
-            
-              {visibleProjects.map((proj, i) => (
-                <div key={proj._name + i}>
-                  <ProjectCard {...proj} />
-                </div>
-              ))}
-
-          </motion.div>
-        </AnimatePresence>
+      <AnimatePresence custom={direction}>
+        <motion.div
+          key={projectIndex}
+          custom={direction}
+          initial={{ transform: `translateX(${direction > 0 ? '-100%' : '100%'})`, opacity: 0 }}
+          animate={{ transform: 'translateX(0%)', opacity: 1 }}
+          exit={{ transform: `translateX(${direction > 0 ? '100%' : '-100%'})`, opacity: 0 }}
+          transition={{ type: 'tween', duration: 0.5 }}
+          className='projects-flex-box'
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          onDragEnd={handleDragEnd}
+          style={{ touchAction: 'pan-y' }}
+        >
+          {visibleProjects.map((proj, i) => (
+            <div key={proj._name + i}>
+              <ProjectCard {...proj} />
+            </div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
       <button onClick={handleNext} disabled={projectIndex >= maxIndex} className='project-button right-button'>
         {/* <img src="/assets/right-arrow.svg" alt="Next" style={{ width: 20, height: 20 }} /> */}
       </button>

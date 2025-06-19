@@ -54,30 +54,21 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
         bubble.style.borderRadius = '50%';
         bubble.style.background = randomColor;
         bubble.style.animationDuration = `${randomSpeed}s`; // Adjust duration dynamically if needed
-        await containerRef.current?.appendChild(bubble);
+        containerRef.current?.appendChild(bubble);
 
         // const id: ReturnType<typeof setInterval> = setInterval(moveBubbles, 1);
         setTimeout(() => {
             containerRef.current?.removeChild(bubble);
         }, 10000);
 
-        function randomBubbleColor() : number[]{
+        async function randomBubbleColor() : Promise<number[]>{
             const innerRange : number[] = SupplementaryClass.rgbaToList(innerBubbleColor);
             const outerRange : number[] = SupplementaryClass.rgbaToList(outerBubbleColor);
             let redRange: number = Math.floor(Math.random() * (outerRange[0] - innerRange[0])) + innerRange[0];
             let greenRange: number = Math.floor(Math.random() * (outerRange[1] - innerRange[1])) + innerRange[1];
             let blueRange: number = Math.floor(Math.random() * (outerRange[2] - innerRange[2])) + innerRange[2];
             return [redRange,greenRange,blueRange];
-        }
-    
-
-        // function moveBubbles() {
-        //     if(bubblePosition < -(MaxBubbleSize)){
-        //         clearInterval(id);
-        //     }
-        //     bubblePosition -= randomSpeed;
-        //     bubble.style.top = `${bubblePosition}px`;
-        // }        
+        } 
     }
 
 

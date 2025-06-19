@@ -14,12 +14,11 @@ interface RowFlexBoxProps {
 
 interface ColumnFlexBoxProps {
     items: RowFlexBoxProps[];
-    width?: string;
 }
 
-const ColumnFlexBox: React.FC<ColumnFlexBoxProps> = memo(({ items, width = '100%' }) => {
+const ColumnFlexBox: React.FC<ColumnFlexBoxProps> = memo(({ items }) => {
     return (
-        <div className='column-flex-box' style={{ width }}>
+        <div className='column-flex-box' >
             {items.map((item: RowFlexBoxProps, index: number) => (
                 <div key={index} className='column-flex-item'>
                     <RowFlexBox title={item.title} items={item.items} />
