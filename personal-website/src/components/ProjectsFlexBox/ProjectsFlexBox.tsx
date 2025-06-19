@@ -78,7 +78,7 @@ const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({ items, amount=2, _opt
         {_optional === 'projects' ? (
           <ProjectCard {...proj}/>
         ) : (
-          <img src={defaultImage} alt={`${proj._name} project`} style={{ maxHeight: '40dvh',minHeight:'30dvh' ,width: 'auto' }} />
+          <img src={defaultImage} alt={`${proj._name} project`} style={{ maxHeight: '40dvh',minHeight:'30dvh' ,width: 'auto', maxWidth:'32vw' }} />
         )}
       </div>
       ))}

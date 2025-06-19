@@ -55,10 +55,16 @@
     padding:0;   
 
     h3{
-        font-size: max(3rem,3vw);
+        font-size: max(30px,3vw);
         margin: 0;
         flex-grow: 0;
     }
+
+    p{
+        font-size: max(20px,1.5vw);
+        margin-inline: 10px;
+        margin-block: 5px;
+        text-align: center;}
     }
 }
 

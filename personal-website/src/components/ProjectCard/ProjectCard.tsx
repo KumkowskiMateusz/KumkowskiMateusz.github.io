@@ -19,7 +19,8 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({
     _technologies = [],
     _date,
     _link = "",
-    _image = defaultImage
+    _image = defaultImage,
+    _description = "No description available for this project."
 }) => {
     const navigate = useNavigate();
 
@@ -31,6 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({
 
         <div className='project-card-hidden-content'>
             <h3 className='project-date'>{_date}</h3>
+            <p className='project-description'>{_description}</p>
         </div>
 
         <div className='project-card-content'>
