@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react'
 import ProjectCard from '../ProjectCard/ProjectCard';
-import useWindowDimensions from '../../customHooks/useWindowDimension';
 import { motion, AnimatePresence } from 'framer-motion';
 import './ProjectsFlexBox.scss'
+import leftIcon from '../../assets/project-images/left-arrow.svg';
+import rightIcon from '../../assets/project-images/right-arrow.svg';
 
 interface ProjectCardProps {
     _name: string;
@@ -16,14 +17,14 @@ interface ProjectCardProps {
 
 interface ProjectsFlexBoxProps {
     items: ProjectCardProps[];
+    amount?: number; // Optional prop to limit the number of projects displayed
 }
 
-const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({ items }) => {
+const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({ items, amount=2 }) => {
   const [projectIndex, setProjectIndex] = useState(0);
   const [direction, setDirection] = useState(0); // 1 for next, -1 for prev
-  const { width } = useWindowDimensions();
 
-  const projectsPerPage = width < 800 ? 2 : 2;
+  const projectsPerPage = amount;
   const maxIndex = Math.max(0, items.length - projectsPerPage);
 
   const visibleProjects = useMemo(
@@ -53,8 +54,8 @@ const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({ items }) => {
 
   return (
     <div className='projects-flex-box-container'>
-      <button onClick={handlePrev} disabled={projectIndex === 0} className='project-button left-button'>
-        {/* <img src="/assets/left-arrow.svg" alt="Previous" style={{ width: 20, height: 20 }} /> */}
+      <button onClick={handlePrev} disabled={projectIndex === 0} className='project-button left-button' style={{background : 'none', border: 'none'}}>
+        <img src={leftIcon} alt="Previous" style={{ width: 50, height: 50 }} />
       </button>
       <AnimatePresence custom={direction}>
         <motion.div
@@ -77,8 +78,8 @@ const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({ items }) => {
           ))}
         </motion.div>
       </AnimatePresence>
-      <button onClick={handleNext} disabled={projectIndex >= maxIndex} className='project-button right-button'>
-        {/* <img src="/assets/right-arrow.svg" alt="Next" style={{ width: 20, height: 20 }} /> */}
+      <button onClick={handleNext} disabled={projectIndex >= maxIndex} className='project-button right-button' style={{background : 'none', border: 'none'}}>
+          <img src={rightIcon} alt="Next" style={{ width: 50, height: 50 }} />
       </button>
     </div>
   )
