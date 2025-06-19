@@ -25,5 +25,5 @@
     z-index: -1;
     border-radius: 50%;
     animation: moveBubble 10s linear;
-    will-change: all;
+    will-change: transform;
 }

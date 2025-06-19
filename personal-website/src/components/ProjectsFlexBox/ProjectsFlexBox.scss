@@ -1,3 +1,8 @@
+.basic_image{
+        height: 30dvh;
+        width: auto;
+}
+
 .projects-flex-box-container{
     display: flex;
     flex-direction: row;
@@ -6,6 +11,7 @@
     width: 80vw;
     margin-block: 20px;
     height: 40vh;
+    margin-inline:auto;
     /* For exponential scaling, use a power function with calc and vw */
     /* Example: height increases faster as vw increases, but capped */
     /* height: min(1200px, max(500px, calc(500px * pow(1.015, (100 * (100vw / 1920)))))); */
@@ -36,7 +42,7 @@
 
     @media (max-width: 768px) {
         height: 60vh;
-        
+
     }
 }
 
