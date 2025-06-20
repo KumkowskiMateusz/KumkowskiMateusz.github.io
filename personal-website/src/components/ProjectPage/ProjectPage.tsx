@@ -29,6 +29,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import ProjectsFlexBox from '../ProjectsFlexBox/ProjectsFlexBox';
 import ColumnFlexBox from '../ColumnFlexBox/ColumnFlexBox';
 import StatusCircle from '../StatusCircle/StatusCircle';
+import BubbleBackground from '../bubbleBackground/BubbleBackground';
 
 const ProjectPage: React.FC = React.memo(() => {
   const navigate = useNavigate();
@@ -59,8 +60,14 @@ const ProjectPage: React.FC = React.memo(() => {
 
   return (
     <>
+    {<BubbleBackground innerBubbleColor={"rgb(59, 40, 228)"} outerBubbleColor={'#rgb(45, 117, 184)'} 
+                        MinBubbleSize={50} MaxBubbleSize={70} 
+                        MinOpacity={0.1} MaxOpacity={0.8}
+                        MinBubbleSpeed={15} MaxBubbleSpeed={3}
+                        bubbleCreationInterval={500}
+                        />}
      <nav id="project-page-nav">
-        <button onClick={() => navigate('/')} className="back-button">
+        <button onClick={() => navigate(-1)} className="back-button">
           Back
         </button>
 

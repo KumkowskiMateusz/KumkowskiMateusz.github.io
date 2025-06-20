@@ -35,13 +35,13 @@
     padding-block: 1rem;
 
     *{
+        font-size: clamp(1.5rem, 2vw, 4rem);
         margin: 0;
         padding: 0;
     }
 }
 
 #project-page-date{
-    font-size: 2rem;
     font-weight: 100;
     height: fit-content;
     align-self: flex-end;
