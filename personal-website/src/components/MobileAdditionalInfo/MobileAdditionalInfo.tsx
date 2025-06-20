@@ -5,11 +5,32 @@ import CareerList from './CareerList'; // Assuming you have a CareerList compone
 import CertList from './CertList'
 import ColumnFlexBox from '../ColumnFlexBox/ColumnFlexBox';
 import skills from './SkillsList'; // Assuming you have a SkillsList component for rendering skills
-import projects from './ProjectList.ts'; // Assuming you have a ProjectList component for rendering projects
+import project from '../../assets/Projects'; // Assuming you have a ProjectList component for rendering projects
 import ProjectsFlexBox from '../ProjectsFlexBox/ProjectsFlexBox';
 
-const MobileAdditionalInfo = () => {
-  
+interface ProjectCardProps {
+  _name: string;
+  _description?: string;
+  _technologies?: string[];
+  _date?: string;
+  _repo ?: string;
+  _link ?: string;
+  _image ?: string;
+} 
+
+
+const MobileAdditionalInfo = () => {  
+
+  const projects: ProjectCardProps[] = project.map((item) => ({
+    _name: item.name,
+    _description: item.description,
+    _technologies: item.tags,
+    _date: item.date,
+    _repo: item.repo,
+    _link: item.link,
+    _image: item.image,
+  }));
+    
 
   return (
     <>
@@ -30,9 +51,9 @@ const MobileAdditionalInfo = () => {
         <TransitionLine size='70%' thickness='5px' color='white' marginLeft='auto' marginRight='0px' marginBlock='2rem'/>
          <article id="Projects">
           <h1>Projects</h1>
-          <ProjectsFlexBox items={projects}></ProjectsFlexBox>
-          <br></br>
-          <br></br>
+          <ProjectsFlexBox items={projects} />
+          <br />
+          <br />
         </article>
     </>
   )

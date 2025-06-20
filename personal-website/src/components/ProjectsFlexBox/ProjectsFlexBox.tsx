@@ -17,7 +17,7 @@ interface ProjectCardProps {
 }  
 
 interface ProjectsFlexBoxProps {
-  items: ProjectCardProps[];
+  items: ProjectCardProps[] | string[]; // Array of project objects or image URLs
   amount?: number; // Optional prop to limit the number of projects displayed
   _optional?: 'projects' | 'images'; // Optional prop to allow custom component rendering
 }
@@ -73,15 +73,34 @@ const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({ items, amount=2, _opt
       onDragEnd={handleDragEnd}
       style={{ touchAction: 'pan-y' }}
     >
-      {visibleProjects.map((proj, i) => (
-      <div key={proj._name + i}>
-        {_optional === 'projects' ? (
-          <ProjectCard {...proj}/>
-        ) : (
-          <img src={defaultImage} alt={`${proj._name} project`} style={{ maxHeight: '40dvh',minHeight:'30dvh' ,width: 'auto', maxWidth:'32vw' }} />
-        )}
-      </div>
-      ))}
+      {visibleProjects.map((proj, i) => {
+        // Determine key and rendering based on type
+        if (_optional === 'projects' && typeof proj !== 'string') {
+          return (
+            <div key={proj._name + i}>
+              <ProjectCard {...proj} />
+            </div>
+          );
+        } else if (_optional === 'images') {
+          // If proj is a string, use it as image src, else use defaultImage
+          const imgSrc = typeof proj === 'string' ? proj : defaultImage;
+          const altText = typeof proj === 'string'
+            ? `Project image ${i + 1}`
+            : `${proj._name ?? 'Project'} project`;
+          return (
+            <div key={typeof proj === 'string' ? proj + i : (proj._name ?? i)}>
+              <img
+                src={imgSrc}
+                alt={altText}
+                style={{ maxHeight: '40dvh', minHeight: '30dvh', width: 'auto', maxWidth: '32vw' }}
+              />
+            </div>
+          );
+        } else {
+          // fallback for unexpected types
+          return null;
+        }
+      })}
     </motion.div>
     </AnimatePresence>
     <button onClick={handleNext} className='project-button right-button' style={{background : 'none', border: 'none', width: "5vw", height: "5vw"}}>

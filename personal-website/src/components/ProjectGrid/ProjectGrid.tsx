@@ -1,5 +1,5 @@
 import React from 'react'
-import Projects from '../../assets/projects.json' 
+import Projects from '../../assets/Projects' 
 import ProjectCard from '../ProjectCard/ProjectCard'
 import useWindowDimensions from '../../customHooks/useWindowDimension'
 import CardComponent from '../Card/CardComponent'
