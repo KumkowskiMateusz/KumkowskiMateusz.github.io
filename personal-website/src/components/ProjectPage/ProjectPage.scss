@@ -1,0 +1,48 @@
+#project-page-nav{
+        z-index: 1000;
+        height: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top:0;
+        position:fixed;
+        padding-inline: 5%;
+        padding-block: 1rem;
+        width: 90%;
+        background-color: rgba(66, 59, 88, 0.3);
+        border-bottom: 2px solid rgba(135, 119, 190, 0.3);
+        backdrop-filter: blur(20px);
+
+        #project-page-links-container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+#project-page-container{
+    margin-top: 5rem;
+    width: 80vw;
+    margin-inline: auto;
+}
+
+#project-page-top-container{
+    display: flex;
+    justify-content: space-between;
+    align-content: end;
+    gap: 5rem;
+    padding-block: 1rem;
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+}
+
+#project-page-date{
+    font-size: 2rem;
+    font-weight: 100;
+    height: fit-content;
+    align-self: flex-end;
+}

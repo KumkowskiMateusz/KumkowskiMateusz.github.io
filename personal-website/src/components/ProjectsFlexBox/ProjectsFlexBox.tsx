@@ -14,6 +14,8 @@ interface ProjectCardProps {
   _repo ?: string;
   _link ?: string;
   _image ?: string;
+  _images?: string[];
+  k ?: number; // Optional key prop for React
 }  
 
 interface ProjectsFlexBoxProps {
@@ -76,17 +78,14 @@ const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({ items, amount=2, _opt
       {visibleProjects.map((proj, i) => {
         // Determine key and rendering based on type
         if (_optional === 'projects' && typeof proj !== 'string') {
+          proj.k = projectIndex + i; // Ensure each project has a unique key
           return (
-            <div key={proj._name + i}>
               <ProjectCard {...proj} />
-            </div>
           );
         } else if (_optional === 'images') {
           // If proj is a string, use it as image src, else use defaultImage
           const imgSrc = typeof proj === 'string' ? proj : defaultImage;
-          const altText = typeof proj === 'string'
-            ? `Project image ${i + 1}`
-            : `${proj._name ?? 'Project'} project`;
+          const altText = typeof proj === 'string' ? `Project image ${i + 1}` : `${proj._name ?? 'Project'} project`;
           return (
             <div key={typeof proj === 'string' ? proj + i : (proj._name ?? i)}>
               <img

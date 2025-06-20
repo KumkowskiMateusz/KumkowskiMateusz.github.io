@@ -1,0 +1,39 @@
+.status-circle-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 1rem;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    border-radius: 2rem;
+    background-color: rgb(243, 243, 243);
+    gap: 1rem;
+    border: white 1px outset;
+
+    p{
+        font-size: large;
+        font-weight: 600;
+        color: black
+    }
+}
+
+
+
+.status-circle{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: black;
+    border: white 1px inset;
+}
+
+.unstarted{
+    background-color: red;
+}
+.in-progress{
+    background-color: yellow;
+}
+.completed{
+    background-color: green;
+}

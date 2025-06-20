@@ -12,19 +12,20 @@ interface ProjectCardProps {
     _repo ?: string;
     _link ?: string;
     _image ?: string;
+    k ?: number;
 }    
 
 const ProjectCard: React.FC<ProjectCardProps> = React.memo(({
     _name,
     _technologies = [],
     _date,
-    _link = "",
     _image = defaultImage,
-    _description = "No description available for this project."
+    _description = "No description available for this project.",
+    k = NaN,
 }) => {
     const navigate = useNavigate();
 
-    return <div className="project-card" key={_name}  onClick={() => {navigate(_link)}}>
+    return <div className="project-card" key={_name}  onClick={() => {navigate(`/project/${k}`)}}>
         
         <div className='project-card-image'>
             <img loading='lazy' src={_image} alt={`${_name} project`} />

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import projects from '../../assets/Projects'
+import './ProjectPage.scss';
 
 interface ImageItemProps {
     text?: string;
@@ -24,12 +25,25 @@ interface ProjectPageProps {
 }
 
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ProjectsFlexBox from '../ProjectsFlexBox/ProjectsFlexBox';
 import ColumnFlexBox from '../ColumnFlexBox/ColumnFlexBox';
+import StatusCircle from '../StatusCircle/StatusCircle';
 
-const ProjectPage: React.FC<number> = React.memo((id : number) => {
+const ProjectPage: React.FC = React.memo(() => {
   const navigate = useNavigate();
+  const  Params  = useParams();
+  const Stringid = Params.id; // Assuming the URL is like /project/:id
+  if (!Stringid) {
+    // You can navigate away, show an error, or return null
+    return <div>Project not found.</div>;
+  }
+  const id = parseInt(Stringid, 10);
+  if (isNaN(id) || id < 0 || id >= projects.length) {
+    // Handle invalid ID
+    return <div>Invalid project ID.</div>;
+  }
+
   const rawProject = projects[id];
   const project: ProjectPageProps = {
     _name: rawProject.name,
@@ -38,15 +52,15 @@ const ProjectPage: React.FC<number> = React.memo((id : number) => {
     _date: rawProject.date,
     _repo: rawProject.repo,
     _link: rawProject.link,
-    _images: rawProject.images || rawProject.image ? [rawProject.image] : [],
+    _images: rawProject.images,
     _state: ['unstarted', 'in-progress', 'completed'].includes(rawProject.state) ? rawProject.state as 'unstarted' | 'in-progress' | 'completed' : 'unstarted',
   };
 
 
   return (
-    <div id="project-page-container">
-      <nav id="project-page-nav">
-        <button onClick={() => navigate(-1)} className="back-button">
+    <>
+     <nav id="project-page-nav">
+        <button onClick={() => navigate('/')} className="back-button">
           Back
         </button>
 
@@ -60,31 +74,39 @@ const ProjectPage: React.FC<number> = React.memo((id : number) => {
         </div>
         
       </nav>
+
+    <div id="project-page-container">
       <main>
 
         <ProjectsFlexBox items={project._images} amount={1} _optional='images' />
         
         <div id="project-page-content">
-          <div className="project-page-image-container">
+          
+          <div id="project-page-top-container">
             <h1 className="project-page-title">{project._name}</h1>
-            
+             {project._date && <h2 id="project-page-date">{project._date}</h2>}
             {/* //Rework into asset */}
-            <p className="project-page-state">State: {project._state}</p>
           </div>
-
+          <StatusCircle status={project._state} />
+          <br/>
+          <br/>
 
           <p className="project-page-description">{project._description}</p>
           
+          <br/>
           <div className="project-page-technologies">
+          <h1>Technologies</h1>
           <ColumnFlexBox items={project._technologies}/>
           </div>
           
-          {project._date && <p className="project-page-date">Date: {project._date}</p>}
           
         </div>
 
-      </main>
+      </main> 
+      <br/>
+      <br/>
     </div>
+    </>
   )
 });
 
