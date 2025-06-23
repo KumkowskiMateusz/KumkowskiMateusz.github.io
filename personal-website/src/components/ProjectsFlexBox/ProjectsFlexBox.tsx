@@ -91,7 +91,7 @@ const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({ items, amount=2, _opt
               <img
                 src={imgSrc}
                 alt={altText}
-                style={{ maxHeight: '40dvh', minHeight: '30dvh', width: 'auto', maxWidth: '32vw' }}
+                style={{ maxHeight: '50dvh', minHeight: '30dvh', width: 'auto', maxWidth: '32vw', border:'2px solid white', borderRadius: '10px' }}
               />
             </div>
           );

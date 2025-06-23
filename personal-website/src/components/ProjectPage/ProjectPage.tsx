@@ -2,6 +2,8 @@
 import React from 'react';
 import projects from '../../assets/Projects'
 import './ProjectPage.scss';
+import GithubIcon from '../../assets/linksImages/github-image.png';
+import Lightbulb from '../../assets/linksImages/light-bulb-svgrepo-com.svg';
 
 interface ImageItemProps {
     text?: string;
@@ -68,16 +70,14 @@ const ProjectPage: React.FC = React.memo(() => {
                         />}
      <nav id="project-page-nav">
         <button onClick={() => navigate(-1)} className="back-button">
-          Back
+          &lt;- Back
         </button>
 
         <div id='project-page-links-container'>
           <a href={project._repo} target='_blank' className='project-page-link'>
-            Repository
-          </a>
-          <a href={project._link} target='_blank' className='project-page-link'>
-            Live Demo
-          </a>
+            <img src={GithubIcon} alt="GitHub" className='project-page-icon' style={{backgroundColor: 'white'}}/>
+          </a>{project._link != "" || project._link != undefined ?
+          <a href={project._link} target='_blank' className='project-page-icon'><img src={Lightbulb} alt="GitHub" className='project-page-icon'/></a> : <></>}
         </div>
         
       </nav>

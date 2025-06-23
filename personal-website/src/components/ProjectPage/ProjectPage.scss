@@ -19,6 +19,20 @@
             align-items: center;
             gap: 1rem;
         }
+
+        button{
+            background: none;
+            border: none;
+            color: white;
+            font-weight: 900;
+            font-size: clamp(1rem, 1.5vw, 2rem);
+            cursor: pointer;
+            transition: color 0.3s ease;
+
+            &:hover{
+                color: #8777BE;
+            }
+        }
     }
 
 #project-page-container{
@@ -45,4 +59,20 @@
     font-weight: 100;
     height: fit-content;
     align-self: flex-end;
+}
+
+.project-page-icon{
+    color: white;
+    height: 40px;
+    width: 40px;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.project-page-icon:hover{
+    transform: scale(1.1);
+    box-shadow: white 0px 0px 10px ;
+    transition: all 0.3s ease;
+    backdrop-filter: brightness(100);
 }
