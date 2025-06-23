@@ -16,8 +16,12 @@
         img{
             position: absolute;
             min-width: max(30vw,30dvh);
+            max-width: 40vw;
             min-height: 30dvh;
+            max-width: 35dvh;
             transform: scale(1.1);
+            object-position: center;
+            object-fit: scale-down;
         }
         border-radius: 20px;
         object-fit: scale-down;
@@ -37,6 +41,7 @@
     will-change: transform;
     margin: 0;
     overflow: hidden;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .project-card-hidden-content{
@@ -49,22 +54,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    background-color: rgb(94, 81, 180);
-    mix-blend-mode: multiply;     
+    color: rgb(255, 255, 255);
+    background-color: rgba(94, 81, 180, 0.459);
+    // mix-blend-mode: multiply;     
     padding:0;   
 
     h3{
         font-size: max(30px,3vw);
         margin: 0;
         flex-grow: 0;
+        // mix-blend-mode: none;     
+
     }
 
     p{
-        font-size: max(20px,1.5vw);
+        font-size: max(20px,1vw);
         margin-inline: 10px;
         margin-block: 5px;
-        text-align: center;}
+        text-align: center;
+    }
     }
 }
 

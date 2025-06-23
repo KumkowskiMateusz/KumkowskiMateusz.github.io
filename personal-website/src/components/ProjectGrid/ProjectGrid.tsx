@@ -1,5 +1,4 @@
 import React from 'react'
-import Projects from '../../assets/Projects' 
 import ProjectCard from '../ProjectCard/ProjectCard'
 import useWindowDimensions from '../../customHooks/useWindowDimension'
 import CardComponent from '../Card/CardComponent'
@@ -9,9 +8,6 @@ const ProjectGrid = () => {
 
 
   var array: { name: string; description: string; technologies: string[]; date: string; repo: string; link: string }[] = []
-  for(let a in Projects.projects){
-    array.push(Projects.projects[a])
-  }
 
   var {width,height} = useWindowDimensions()
   width /= 10;

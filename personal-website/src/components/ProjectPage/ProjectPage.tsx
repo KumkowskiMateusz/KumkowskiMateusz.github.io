@@ -97,8 +97,13 @@ const ProjectPage: React.FC = React.memo(() => {
           <StatusCircle status={project._state} />
           <br/>
           <br/>
-
-          <p className="project-page-description">{project._description}</p>
+          {
+            project._description?.split('<br/>').map((line, index) => (
+              <>
+              <p className="project-page-description" key={index}>{line}</p>
+              </>
+            ))
+          }
           
           <br/>
           <div className="project-page-technologies">

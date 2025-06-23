@@ -25,6 +25,8 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({
 }) => {
     const navigate = useNavigate();
 
+    _description = _description.length > 200 ? _description.slice(0, 200) + "..." : _description;
+
     return <div className="project-card" key={_name}  onClick={() => {navigate(`/project/${k}`)}}>
         
         <div className='project-card-image'>

@@ -76,3 +76,9 @@
     transition: all 0.3s ease;
     backdrop-filter: brightness(100);
 }
+
+.project-page-description{
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    margin-block: 2rem;
+    line-height: 1.5;
+}
