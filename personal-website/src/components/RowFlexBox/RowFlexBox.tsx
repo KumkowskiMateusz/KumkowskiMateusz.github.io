@@ -13,6 +13,13 @@ interface RowFlexBoxProps {
 }
 
 const RowFlexBox: React.FC<RowFlexBoxProps> = React.memo(({ title, items }) => {
+    items = items.sort((a, b) => {
+        if (a.text && b.text) {
+            return a.text.localeCompare(b.text);
+        }
+        return 0;
+    });
+
     return (
         <div className='row-flex-container'>
             <h3 className='row-flex-text'>{title}</h3>

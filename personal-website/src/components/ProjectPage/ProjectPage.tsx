@@ -76,8 +76,7 @@ const ProjectPage: React.FC = React.memo(() => {
         <div id='project-page-links-container'>
           <a href={project._repo} target='_blank' className='project-page-link'>
             <img src={GithubIcon} alt="GitHub" className='project-page-icon' style={{backgroundColor: 'white'}}/>
-          </a>{project._link != "" || project._link != undefined ?
-          <a href={project._link} target='_blank' className='project-page-icon'><img src={Lightbulb} alt="GitHub" className='project-page-icon'/></a> : <></>}
+          </a>{project._link != "" ? <a href={project._link} target='_blank' className='project-page-icon'><img src={Lightbulb} alt="Link To Web" className='project-page-icon'/></a> : <></>}
         </div>
         
       </nav>

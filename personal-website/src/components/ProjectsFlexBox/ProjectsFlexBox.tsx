@@ -31,6 +31,19 @@ const ProjectsFlexBox: React.FC<ProjectsFlexBoxProps> = ({ items, amount=2, _opt
   const projectsPerPage = amount;
   const maxIndex = Math.max(0, items.length - projectsPerPage);
 
+  items = useMemo(() => {
+    if (_optional === 'projects' && items.length > 0 && typeof items[0] !== 'string') {
+      return [...(items as ProjectCardProps[])].sort((a, b) => {
+        const dateA = a._date ? new Date(a._date).getTime() : 0;
+        const dateB = b._date ? new Date(b._date).getTime() : 0;
+        return dateB - dateA;
+      });
+    }
+    return items;
+  }, [items, _optional]);
+
+  // Use sortedItems instead of items below
+
   const visibleProjects = useMemo(
   () => items.slice(projectIndex, projectIndex + projectsPerPage),
   [items, projectIndex, projectsPerPage]

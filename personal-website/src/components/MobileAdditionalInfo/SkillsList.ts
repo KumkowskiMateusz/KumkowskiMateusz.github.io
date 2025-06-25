@@ -59,7 +59,7 @@ const skills: SkillCategory[] = [
       { text: "Linux", imageUrl: "https://img.icons8.com/color/48/linux.png" },
       { text: "Trello", imageUrl: "https://img.icons8.com/color/48/trello.png" },
       { text: "Jira", imageUrl: "https://img.icons8.com/color/48/jira.png" },
-      { text: "Figma", imageUrl: "https://img.icons8.com/color/48/figma--v1.png" },
+      { text: 'Maven', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRykqUCa32TIYKkYsVpULbUcDFOeyswAFw_Rg&s' },
     ],
   },
   {

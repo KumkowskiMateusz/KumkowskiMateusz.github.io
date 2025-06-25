@@ -16,10 +16,8 @@
         img{
             position: absolute;
             min-width: max(30vw,30dvh);
-            max-width: 40vw;
             min-height: 30dvh;
-            max-width: 35dvh;
-            transform: scale(1.1);
+            transform: scale(1.2);
             object-position: center;
             object-fit: scale-down;
         }
@@ -86,7 +84,7 @@
 
     .project-card-image img {
         transition: transform 0.3s linear;
-        transform: scale(1);
+        transform: scale(1.1);
     }
 
     .project-card-content {
