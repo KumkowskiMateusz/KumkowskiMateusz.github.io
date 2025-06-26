@@ -19,10 +19,9 @@
             min-height: 30dvh;
             transform: scale(1.2);
             object-position: center;
-            object-fit: scale-down;
+            object-fit: stretch;
         }
         border-radius: 20px;
-        object-fit: scale-down;
         z-index: -1;
         will-change: transform, opacity;
     }

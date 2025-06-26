@@ -37,13 +37,13 @@ const AboutMe: React.FC = () => {
           <p>Currently, I am eager to further my career by seeking an internship/associate position within New York, where I can leverage my skills in software development and continue to grow in areas like cloud architecture, DevOps, and data analytics. My focus is to gain practical experience, contribute to impactful projects, and further develop my problem-solving abilities.</p>
           <p>I’m excited to learn from professionals in the field and bring my enthusiasm for technology and continuous improvement to new challenges.</p>
 
-          <p>Outside of acadmics and coding, I have a couple of hobbies. I enjoy cooking,
+          {/* <p>Outside of acadmics and coding, I have a couple of hobbies. I enjoy cooking,
              I am much better cooking than with baking at the moment however I am striving to improve. 
              Additionally, I enjoy playing video games in which my top three games are: Claire Obscure: Expedition 33, Horizon Zero Dawn, 
              and Baldur's Gate 3. I can go for hours talking about these games. 
              One final thing, but definetly not the last, would be Dungeons and Dragons. I enjoy creating these worlds that my friends and I can play in. 
              I am currently in the very early stages of developing an electronic tabletop that me and my friends could use for the game.
-          </p>
+          </p> */}
           <br></br>
           <br></br>
 
