@@ -82,6 +82,7 @@ React.useEffect(() => {
                     <ul style={{display: 'flex', listStyle: 'none', gap: '1.5rem', margin: 0, padding: 0}}>
                         <NavbarSegment text="Intro" hyperlink="#intro"/>
                         <NavbarSegment text="About" hyperlink="#about-me"/>
+                        <NavbarSegment text="Certifications" hyperlink="#Career"/>
                         <NavbarSegment text="Certifications" hyperlink="#Certifications"/>
                         <NavbarSegment text="Skills" hyperlink="#Skills"/>
                         <NavbarSegment text="Projects" hyperlink="#Projects"/>
